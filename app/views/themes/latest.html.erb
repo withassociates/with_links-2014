@@ -1,8 +1,63 @@
-<h3>Latest Theme:</h3>
-<h1><%= @theme.title %></h1>
+<nav class="primary-nav">
+  <div class="container">
+    <ul class="primary-nav-page-list">
+      <li class="primary-nav-page-list-item"><a href="#">Home</a></li>
+      <li class="primary-nav-page-list-item"><a href="#">Themes</a></li>
+      <li class="primary-nav-page-list-item"><a href="#">About</a></li>
+    </ul>
+  </div>
+</nav>
 
-<% @theme.links.each do |link| %>
-  <p><strong><%= link.person.name %>:</strong></p>
-  <p><%= link_to link.title, link.url %></p>
-  <p><%= link.description %></p>
-<% end %>
+<section class="index-masthead">
+  <div class="container">
+    <h1>With Links</h1>
+    <p class="index-masthead-intro">Lorem ipsum dolor sit amet, consectetuer diam adipiscing, sed dolor nonummy</p>
+    <button>Subscribe to With Links</button>
+  </div>
+</section>
+
+<section class="index-current-links">
+  <div class="container">
+    <h2 class="index-section-heading">Theme <%= @theme.issue_number %>: <%= @theme.title %></h2>
+    <div class="link-list-wrapper">
+      <ul class="link-list">
+        <% @theme.links.each do |link| %>
+          <li class="link-list-item">
+            <div class="link-list-column link-list-image-column">
+              <div class="link-list-column-content">
+                <img alt="Placeholder" class="link-list-image" src="http://placehold.it/512x512/cccccc/cccccc">
+              </div>
+            </div>
+            <div class="link-list-column link-list-text-column">
+              <div class="link-list-column-content">
+                <div class="link-list-headings">
+                  <h3 class="link-list-person"><%= link.person.name %> </h3>
+                  <h4 class="link-list-title"><a href="<%= link.url %>"><%= link.title %></a></h4>
+                </div>
+                <div class="link-list-description">
+                  <p><%= link.description %></p>
+                </div>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+      <%= link_to "View All Themes", themes_path %>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <hr>
+</div>
+
+<section class="index-subscribe">
+  <div class="container">
+    <h2 class="index-section-heading">Subscribe to With Links</h2>
+    <form class="index-subscribe-form">
+      <label>Email Address</label>
+      <input type="email">
+      <button>Submit</button>
+    </form>
+  </div>
+</section>
