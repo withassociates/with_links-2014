@@ -1,12 +1,13 @@
 ActiveAdmin.register Theme do
   menu :label => "Themes"
-  permit_params :issue_date, :title, :issue_number,
-    links_attributes: [:id, :title, :url, :description, :_destroy]
+  permit_params :issue_date, :title, :issue_number, :published,
+    links_attributes: [:id, :title, :url, :description, :person, :person_id, :_destroy]
 
   index do
     column :title
     column :issue_date
     column :issue_number
+    column :published
     default_actions
   end
 
@@ -15,6 +16,7 @@ ActiveAdmin.register Theme do
       f.input :title, label: "Theme title"
       f.input :issue_date, label: "Issue date"
       f.input :issue_number, label: "Issue number"
+      f.input :published, label: "Published to site?"
     end
     f.inputs do
       f.has_many :links, allow_destroy: true, heading: 'Links' do |cf|

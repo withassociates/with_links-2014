@@ -1,0 +1,7 @@
+<h1>Themes</h1>
+
+<ul>
+  <% @themes.each do |theme| %>
+    <li><%= link_to theme.title, theme_path(theme.id) %></li>
+  <% end %>
+</ul>

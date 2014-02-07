@@ -1,0 +1,8 @@
+<h3>Latest Theme:</h3>
+<h1><%= @theme.title %></h1>
+
+<% @theme.links.each do |link| %>
+  <p><strong><%= link.person.name %>:</strong></p>
+  <p><%= link_to link.title, link.url %></p>
+  <p><%= link.description %></p>
+<% end %>

@@ -1,0 +1,9 @@
+<h1><%= @theme.title %></h1>
+<p>Vol 2, Issue <%= @theme.issue_number %>: <%= @theme.issue_date %></p>
+<ul>
+  <% @theme.links.each do |link| %>
+    <li><strong><%= link.person.name %></strong>: <%= link_to link.title, link.url %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Back to the home page", root_path %>
