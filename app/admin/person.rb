@@ -1,4 +1,10 @@
 ActiveAdmin.register Person do
+  controller do
+    def find_resource
+      scoped_collection.friendly.find(params[:id])
+    end
+  end
+
   menu :label => "People"
 
   permit_params :name

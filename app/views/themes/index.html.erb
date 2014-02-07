@@ -2,6 +2,6 @@
 
 <ul>
   <% @themes.each do |theme| %>
-    <li><%= link_to theme.title, theme_path(theme.id) %></li>
+    <li><%= link_to theme.title, theme_path(theme) %></li>
   <% end %>
 </ul>

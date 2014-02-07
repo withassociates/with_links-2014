@@ -1,4 +1,10 @@
 ActiveAdmin.register Theme do
+  controller do
+    def find_resource
+      scoped_collection.friendly.find(params[:id])
+    end
+  end
+
   menu :label => "Themes"
   permit_params :issue_date, :title, :issue_number, :published,
     links_attributes: [:id, :title, :url, :description, :icon, :person, :person_id, :_destroy]
@@ -20,11 +26,11 @@ ActiveAdmin.register Theme do
     end
     f.inputs do
       f.has_many :links, allow_destroy: true, heading: 'Links' do |cf|
-        cf.input :icon
+        cf.input :icon, hint: cf.template.image_tag(cf.object.icon.url(:thumb))
         cf.input :person
-       cf.input :title
-       cf.input :url
-       cf.input :description
+        cf.input :title
+        cf.input :url
+        cf.input :description
       end
     end
     f.actions

@@ -19,6 +19,7 @@ gem 'paperclip'
 gem 'rails_12factor'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'aws-sdk'
+gem 'friendly_id', '~> 5.0.0'
 
 group :development, :test do
   gem 'better_errors'
