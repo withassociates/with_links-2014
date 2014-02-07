@@ -18,6 +18,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'paperclip'
 gem 'rails_12factor'
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'aws-sdk'
 
 group :development, :test do
   gem 'better_errors'

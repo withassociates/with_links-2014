@@ -1,7 +1,7 @@
 ActiveAdmin.register Theme do
   menu :label => "Themes"
   permit_params :issue_date, :title, :issue_number, :published,
-    links_attributes: [:id, :title, :url, :description, :person, :person_id, :_destroy]
+    links_attributes: [:id, :title, :url, :description, :icon, :person, :person_id, :_destroy]
 
   index do
     column :title
@@ -20,6 +20,7 @@ ActiveAdmin.register Theme do
     end
     f.inputs do
       f.has_many :links, allow_destroy: true, heading: 'Links' do |cf|
+        cf.input :icon
         cf.input :person
        cf.input :title
        cf.input :url
