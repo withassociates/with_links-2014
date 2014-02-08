@@ -4,6 +4,8 @@ gem 'rails', '4.0.2'
 
 group :development do
   gem 'sqlite3'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :production do
@@ -21,7 +23,8 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'aws-sdk'
 gem 'friendly_id', '~> 5.0.0'
 
-group :development, :test do
-  gem 'better_errors'
-  gem 'binding_of_caller'
+group :test do
+  gem 'rspec-rails'
+  gem 'capybara'
 end
+
