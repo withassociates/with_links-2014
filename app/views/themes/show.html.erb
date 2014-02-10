@@ -1,10 +1,7 @@
 <h1><%= @theme.title %></h1>
 <p>Vol 2, Issue <%= @theme.issue_number %>: <%= @theme.issue_date %></p>
 <ul>
-  <% @theme.links.each do |link| %>
-    <li><strong><%= link.person.name %></strong>: <%= link_to link.title, link.url %></li>
-    <li><%= link_to "Vote for this With Link!", vote_path(link) %></li>
-  <% end %>
+  <%= render @theme.links %>
 </ul>
 
 <%= link_to "Back to the home page", root_path %>

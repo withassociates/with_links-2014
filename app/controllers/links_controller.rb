@@ -15,4 +15,8 @@ class LinksController < ApplicationController
     end
     redirect_to root_path
   end
+
+  def top
+    @top_links = Link.top_10
+  end
 end

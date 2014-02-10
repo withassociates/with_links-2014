@@ -1,0 +1,9 @@
+<h1>Top 10 With Links</h1>
+
+<ul>
+  <% @top_links.each_with_index do |link, i| %>
+    <li>IN AT NUMBER <%= i + 1 %>:
+      <%= link_to link.title, link.url %>, from <%= link.person.name %> 
+      with <%= pluralize link.votes, 'vote' %>!</li>
+  <% end %>
+</ul>
