@@ -7,4 +7,8 @@ class Link < ActiveRecord::Base
 
   belongs_to :person
   belongs_to :theme
+
+  def vote_up!
+    increment!(:votes)
+  end
 end

@@ -3,6 +3,7 @@
 <ul>
   <% @theme.links.each do |link| %>
     <li><strong><%= link.person.name %></strong>: <%= link_to link.title, link.url %></li>
+    <li><%= link_to "Vote for this With Link!", vote_path(link) %></li>
   <% end %>
 </ul>
 
