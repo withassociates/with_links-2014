@@ -11,28 +11,7 @@
     <h2 class="index-section-heading">Theme <%= @theme.issue_number %>: <%= @theme.title %></h2>
     <div class="link-list-wrapper">
       <ul class="link-list">
-        <% @theme.links.each do |link| %>
-          <li class="link-list-item">
-            <div class="link-list-column link-list-image-column">
-              <div class="link-list-column-content">
-                <%= image_tag link.icon(:thumb) %>
-              </div>
-            </div>
-            <div class="link-list-column link-list-text-column">
-              <div class="link-list-column-content">
-                <div class="link-list-headings">
-                  <h3 class="link-list-person"><%= link.person.name %> </h3>
-                  <h4 class="link-list-title"><a href="<%= link.url %>"><%= link.title %></a></h4>
-                </div>
-                <div class="link-list-description">
-                  <p><%= link.description %></p>
-
-                  <p><strong><%= link_to "Vote for this With Link!", vote_path(link) %></strong></p>
-                </div>
-              </div>
-            </div>
-          </li>
-        <% end %>
+        <%= render @theme.links %>
       </ul>
       <%= link_to "View All Themes", themes_path %>
     </div>

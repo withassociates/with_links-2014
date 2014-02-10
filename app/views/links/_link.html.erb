@@ -1,0 +1,20 @@
+<%= content_tag_for(:li, link, class: 'link-list-item') do %>
+  <div class="link-list-column link-list-image-column">
+    <div class="link-list-column-content">
+      <%= image_tag link.icon(:thumb) %>
+    </div>
+  </div>
+  <div class="link-list-column link-list-text-column">
+    <div class="link-list-column-content">
+      <div class="link-list-headings">
+        <h3 class="link-list-person"><%= link.person.name %> </h3>
+        <h4 class="link-list-title"><a href="<%= link.url %>"><%= link.title %></a></h4>
+      </div>
+      <div class="link-list-description">
+        <p><%= link.description %></p>
+
+        <p><strong><%= link_to "Vote for this With Link!", vote_path(link), method: :post %></strong></p>
+      </div>
+    </div>
+  </div>
+<% end %>
