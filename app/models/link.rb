@@ -3,12 +3,13 @@ class Link < ActiveRecord::Base
     thumb: '100x100>'
   }
 
-  validates_attachment_content_type :icon, :content_type => %w(image/jpeg image/jpg image/png image/gif)
+  validates_attachment_content_type :icon, :content_type => %w(image/jpeg image/jpg image/png image/gif image/svg+xml)
+  # validates_presence_of :title
 
   belongs_to :person
   belongs_to :theme
 
-  scope :top_10, order("votes DESC").limit(10)
+  scope :top_10, -> { order("votes DESC").limit(10) }
 
   def vote_up!
     increment!(:votes)

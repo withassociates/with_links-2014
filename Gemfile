@@ -22,6 +22,7 @@ gem 'paperclip'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'aws-sdk'
 gem 'friendly_id', '~> 5.0.0'
+gem 'createsend'
 
 group :test do
   gem 'rspec-rails', '~> 3.0.0.beta1'

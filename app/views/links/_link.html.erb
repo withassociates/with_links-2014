@@ -8,7 +8,7 @@
     <div class="link-list-column-content">
       <div class="link-list-headings">
         <h3 class="link-list-person"><%= link.person.name %> </h3>
-        <h4 class="link-list-title"><a href="<%= link.url %>"><%= link.title %></a></h4>
+        <h4 class="link-list-title"><%= link_unless_person_is_away(link) %></a></h4>
       </div>
       <div class="link-list-description">
         <p><%= link.description %></p>

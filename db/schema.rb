@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140210092557) do
+ActiveRecord::Schema.define(version: 20140210153600) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20140210092557) do
     t.integer  "theme_id"
     t.integer  "person_id"
     t.integer  "votes",             default: 0
+    t.boolean  "is_away",           default: false
   end
 
   create_table "people", force: true do |t|
@@ -91,6 +92,7 @@ ActiveRecord::Schema.define(version: 20140210092557) do
     t.integer  "issue_number"
     t.boolean  "published"
     t.string   "slug"
+    t.boolean  "sent",         default: false
   end
 
   add_index "themes", ["slug"], name: "index_themes_on_slug", unique: true

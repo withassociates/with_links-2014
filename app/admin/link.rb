@@ -15,6 +15,7 @@ ActiveAdmin.register Link do
   form :html => { enctype: "multipart/form-data" } do |f|
     f.inputs "Link" do
       f.input :person
+      f.input :is_away, label: "Is Away?"
       f.input :url, label: "URL"
       f.input :title, label: "Link title"
       f.input :description, label: "Link description"

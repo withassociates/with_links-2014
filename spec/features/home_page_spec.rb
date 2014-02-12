@@ -16,6 +16,7 @@ describe "Home page" do
   let! :link do
     Link.create!(
       person: calum,
+      is_away: false,
       theme: theme,
       url: 'http://www.withassociates.com',
       title: 'With Associates',
@@ -27,6 +28,7 @@ describe "Home page" do
     person = Person.create!(name: 'Joseph')
     Link.create!(
       person: person,
+      is_away: false,
       theme: theme,
       url: 'http://www.google.com',
       title: 'Google Link',
