@@ -1,3 +1,13 @@
 == With Links 2014
 
-Load it up and visit '/admin' to feel the power!
+*Setup:*
+
+Clone the repo, run `bundle install` and `rake db:migrate`.
+
+Visit '/admin' (ask a human for the passwordz).
+
+With Links needs People, to create Themes, to create Links by People within those Themes.
+
+*Deploying:*
+
+`git push heroku master`
