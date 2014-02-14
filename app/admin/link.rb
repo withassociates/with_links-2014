@@ -1,6 +1,6 @@
 ActiveAdmin.register Link do
   menu :label => "Links"
-  permit_params :title, :url, :description, :icon, :person, :person_id,
+  permit_params :title, :url, :description, :icon, :icon_attribution_file, :is_away, :person, :person_id,
     people_attributes: [:id, :name]
 
   index do
@@ -8,7 +8,7 @@ ActiveAdmin.register Link do
     column :votes
     column :title
     column :url
-    column :description
+    column :icon_attribution
     default_actions
   end
 
@@ -20,6 +20,7 @@ ActiveAdmin.register Link do
       f.input :title, label: "Link title"
       f.input :description, label: "Link description"
       f.input :icon, as: :file, hint: f.template.image_tag(f.object.icon.url(:thumb))
+      f.input :icon_attribution_file, as: :file
     end
     f.actions
   end

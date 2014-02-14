@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140210153600) do
+ActiveRecord::Schema.define(version: 20140214095127) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -71,8 +71,13 @@ ActiveRecord::Schema.define(version: 20140210153600) do
     t.datetime "icon_updated_at"
     t.integer  "theme_id"
     t.integer  "person_id"
-    t.integer  "votes",             default: 0
-    t.boolean  "is_away",           default: false
+    t.integer  "votes",                              default: 0
+    t.boolean  "is_away",                            default: false
+    t.string   "icon_attribution_file_file_name"
+    t.string   "icon_attribution_file_content_type"
+    t.integer  "icon_attribution_file_file_size"
+    t.datetime "icon_attribution_file_updated_at"
+    t.string   "icon_attribution"
   end
 
   create_table "people", force: true do |t|
