@@ -1,0 +1,24 @@
+.primary-nav {
+  overflow: hidden;
+
+  margin-bottom: -30px;
+
+  background: #cccccc;
+}
+
+.primary-nav .container { margin: 24px auto; }
+
+.primary-nav-page-list {
+  margin: 0;
+  padding: 0;
+
+  text-align: center;
+
+  list-style: none;
+}
+
+.primary-nav-page-list-item {
+  display: inline;
+
+  margin: 0 12px;
+}

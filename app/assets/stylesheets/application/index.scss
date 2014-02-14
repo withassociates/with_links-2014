@@ -1,0 +1,41 @@
+.index-masthead {
+  overflow: hidden;
+
+  font-family: $serif;
+  text-align: center;
+
+  background: #cccccc;
+}
+
+.index-masthead button { border-color: #999999; }
+
+.index-masthead .container { padding: 0 48px; }
+
+.index-masthead-intro {
+  margin-top: -40px;
+
+  font-size: 1.5em;
+  line-height: 1.5em;
+
+  color: #ffffff;
+}
+
+.index-section-heading { text-align: center; }
+
+.index-section-more-button { margin-top: 48px; }
+
+.index-subscribe-form {
+  margin-top: -24px;
+  max-width: 36em;
+}
+
+@media (min-width: 480px) {
+  .index-masthead-intro {
+    font-size: 2em;
+    line-height: 1.5em;
+  }
+}
+
+@media (min-width: 768px) {
+  .index-masthead .container { margin: 72px auto; }
+}
