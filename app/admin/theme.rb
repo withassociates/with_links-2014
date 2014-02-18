@@ -7,7 +7,7 @@ ActiveAdmin.register Theme do
 
   menu :label => "Themes"
   permit_params :issue_date, :title, :issue_number, :published, :sent,
-    links_attributes: [:id, :title, :url, :description, :icon, :icon_attribution_file, :person, :person_id, :_destroy]
+    links_attributes: [:id, :title, :url, :description, :icon, :icon_attribution_file, :is_away, :person, :person_id, :_destroy]
 
   index do
     column :title
@@ -30,9 +30,10 @@ ActiveAdmin.register Theme do
       f.has_many :links, allow_destroy: true, heading: 'Links' do |cf|
         cf.input :icon, as: :file, hint: cf.template.image_tag(cf.object.icon.url(:thumb))
         cf.input :person
+        cf.input :is_away, label: "Person is away?"
         cf.input :title
-        cf.input :url
-        cf.input :description
+        cf.input :url, label: "URL"
+        cf.input :description, label: "Link description"
         cf.input :icon_attribution_file, as: :file
       end
     end
