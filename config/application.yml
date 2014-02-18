@@ -1,0 +1,2 @@
+development:
+  secret_key: 'a' * 32

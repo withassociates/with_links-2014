@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-WithLinksV2::Application.config.secret_key_base = 'cfd5b7954718e523ea852dc6a5a9f80c0aee51ec6b31ea1a9c96f15b5e66d24eb45de08a22f5ec0d3559dfd3f5fe513ea12ce9f5d07b25cd2b565a7242bee1fb'
+WithLinksV2::Application.config.secret_key_base = ENV['secret_key']
