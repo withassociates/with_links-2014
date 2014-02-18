@@ -6,7 +6,7 @@
 
 Clone the repo, run `bundle install` and `rake db:migrate`.
 
-Visit '/admin' (ask a human for the passwordz).
+Visit '/admin' (ask a human for the passwordz or check in Instiki).
 
 With Links needs People and Themes to create Links by People within those Themes. You know?
 
