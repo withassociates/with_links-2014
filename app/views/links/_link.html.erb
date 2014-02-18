@@ -11,7 +11,7 @@
         <h4 class="link-list-title"><%= link_unless_person_is_away(link) %></a></h4>
       </div>
       <div class="link-list-description">
-        <p><%= link.description %></p>
+        <p><%= link.description.html_safe %></p>
 
         <p><strong><%= link_to "Vote for this With Link!", vote_path(link), method: :post %></strong></p>
       </div>
