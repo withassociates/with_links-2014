@@ -1,5 +1,10 @@
+defaults: &defaults
+
+production:
+  secret_key: <%= ENV['secret_key'] %>
+
 development:
-  secret_key: 'a' * 32
+  secret_key: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
 
 test:
-  secret_key: 't' * 32
+  secret_key: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
