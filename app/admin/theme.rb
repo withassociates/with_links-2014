@@ -5,9 +5,21 @@ ActiveAdmin.register Theme do
     end
   end
 
+  action_item only: :edit do
+    link_to('Delete this Theme and its Links', delete_theme_and_links_admin_themes_path(id: theme.id),
+            method: :delete, confirm: "Are you sure you want to delete this Theme and its Links?")
+  end
+
+  collection_action :delete_theme_and_links, method: :delete do
+    Link.where(theme_id: params[:id]).destroy_all
+    Theme.find(params[:id]).destroy
+    redirect_to admin_themes_path
+  end
+
   menu :label => "Themes"
   permit_params :issue_date, :title, :issue_number, :published, :sent,
-    links_attributes: [:id, :title, :url, :description, :icon, :icon_attribution_file, :is_away, :person, :person_id, :_destroy]
+    links_attributes: [:id, :title, :url, :description, :icon, :icon_attribution_file, 
+                       :is_away, :person, :person_id, :_destroy]
 
   index do
     column :title
@@ -40,3 +52,4 @@ ActiveAdmin.register Theme do
     f.actions
   end
 end
+

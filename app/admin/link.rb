@@ -1,4 +1,6 @@
 ActiveAdmin.register Link do
+  # belongs_to :theme
+  # belongs_to :person
   menu :label => "Links"
   permit_params :title, :url, :description, :icon, :icon_attribution_file, :is_away, :person, :person_id,
     people_attributes: [:id, :name]
