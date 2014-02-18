@@ -6,4 +6,20 @@ module ApplicationHelper
       link_to link.title, link.url
     end
   end
+
+  def icon_or_away_icon(link)
+    if link.is_away?
+      'suitcase.png'
+    else
+      link.icon(:thumb)
+    end
+  end
+
+  def icon_credit(link)
+    if link.is_away?
+      "Suitcase by Diego Naive from the Noun Project"
+    else
+      link.icon_attribution
+    end
+  end
 end
