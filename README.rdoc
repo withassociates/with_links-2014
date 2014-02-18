@@ -1,6 +1,6 @@
 == With Links 2014
 
-[![Code Climate](https://codeclimate.com/repos/5303646769568029d40056a1/badges/87df846860c8c28b8fbb/gpa.png)](https://codeclimate.com/repos/5303646769568029d40056a1/feed)
+{<img src="https://codeclimate.com/repos/5303646769568029d40056a1/badges/87df846860c8c28b8fbb/gpa.png" />}[https://codeclimate.com/repos/5303646769568029d40056a1/feed]
 
 *Setup:*
 
