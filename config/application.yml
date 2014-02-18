@@ -1,3 +1,6 @@
+production:
+  secret_key: <%= ENV['secret_key'] %>
+
 development:
   secret_key: 'a' * 32
 
