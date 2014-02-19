@@ -4,12 +4,17 @@
 
 *Setup:*
 
-Clone the repo, run `bundle install` and `rake db:migrate`.
+Clone the repo, run <tt>bundle install</tt> and <tt>rake db:migrate</tt>.
+To install dummy data for your development environment, run <tt>rake db:seed</tt>.
 
 Visit '/admin' (ask a human for the passwordz or check in Instiki).
 
-With Links needs People and Themes to create Links by People within those Themes. You know?
-
 *Deploying:*
 
-`git push heroku master`
+<tt>git push heroku master</tt>
+
+*Usage:*
+
+From '/admin', you can create People, Links and Themes. People are created first, as they will rarely change.
+
+Create a Theme from '/admin/themes', to which you can add Links (belonging to the previous created People).
