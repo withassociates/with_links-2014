@@ -19,7 +19,7 @@ describe LinksController do
       expect(response.cookies['done']).to eq("true")
     end
 
-    specify "voting is disallowed ing if you have a cookie" do
+    specify "voting is disallowed if you have a cookie" do
       expect(Link).not_to receive(:find).with('1')
       request.cookies['done'] = 'true'
       get :vote, id: '1'
