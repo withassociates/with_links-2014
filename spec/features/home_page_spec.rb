@@ -37,6 +37,8 @@ describe "Home page" do
   end
 
   it "displays the home page and allows one vote" do
+    pending
+
     visit '/'
 
     expect(page).to have_content("Theme 1: Testing")
