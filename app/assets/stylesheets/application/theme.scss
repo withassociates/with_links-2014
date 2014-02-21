@@ -1,0 +1,101 @@
+.theme {
+  margin: 1.8em auto;
+  padding: 1.8em 0;
+  max-width: 880px;
+
+  background: $wl-light;
+
+  @media (max-width: 920px) {
+    margin: 20px;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0;
+  }
+}
+
+.theme-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.theme-reference {
+  margin: 0;
+  font-size: 0.65em;
+}
+
+.theme-title {
+  margin: 0;
+  font-size: 1.8em;
+}
+
+.theme-date {
+  margin: 0;
+  font-size: 0.65em;
+  font-weight: normal;
+}
+
+.theme-links {
+  margin: 0 percentage(80 / 880);
+  padding: 0;
+
+  list-style: none;
+
+  @media (max-width: 768px) {
+    margin: 0 1.8em;
+  }
+}
+
+.theme-link {
+  @include clearfix;
+
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding: 30px 0;
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  .left {
+    float: left;
+    margin-right: percentage(30 / 720);
+    width: percentage(100 / 720);
+  }
+
+  .right {
+    float: left;
+    width: percentage(530 / 720);
+
+    @media (max-width: 768px) {
+      width: percentage(590 / 720);
+    }
+  }
+}
+
+.theme-link-person {
+  font-weight: normal;
+  font-size: 1em;
+
+  color: $wl-blue;
+}
+
+.theme-link-title {
+  font-size: 1.8em;
+
+  a { text-decoration: none; }
+}
+
+.theme-link-person {
+  margin: 0;
+  margin-top: -0.25em;
+}
+
+.theme-link-title {
+  margin: 0;
+}
+
+.theme-link-text {
+  > :first-child { margin-top: 0; }
+  > :last-child { margin-bottom: 0; }
+}

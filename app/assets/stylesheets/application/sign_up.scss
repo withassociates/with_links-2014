@@ -11,25 +11,34 @@
   border-top: 1px solid rgba(0,0,0,0.2);
 }
 
+.sign-up-title {
+  font-size: 1.12em;
+}
+
 .sign-up-field,
 .sign-up-button {
-  @include reset-field;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  outline: none;
+
+  @include appearance(none);
 
   padding: 0.6875em;
   height: 2.95em;
 
   font-family: $sans;
-  font-size: 16px;
+  font-size: 1em;
   line-height: 1.5;
 
-  background: $wa-white;
-  color: $wa-dark;
+  background: white;
+  color: $wl-blue;
 
   -webkit-font-smoothing: antialiased;
 
   @include placeholder {
-    font-style: italic;
-    color: transparentize(black, 0.5);
+    color: $wl-blue;
   }
 }
 
@@ -42,7 +51,7 @@
 
 .sign-up-button {
   display: block;
-  @include position(absolute, 1px 0px 0px 0);
+  @include position(absolute, 0px 0px 0px 0);
 
   border-radius: 2px;
   font-weight: bold;
@@ -56,6 +65,6 @@
 
     margin-top: 0.5em;
     height: 2px;
-    background: $wa-dark;
+    background: $wl-blue;
   }
 }

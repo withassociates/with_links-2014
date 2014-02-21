@@ -1,0 +1,32 @@
+#header {
+  overflow: hidden;
+  padding: 1.8em;
+
+  text-align: center;
+  background: $wl-blue;
+
+  .container {
+    margin: 0 auto;
+    max-width: 540px;
+  }
+}
+
+.header-title {
+  margin: 0;
+  font-size: 3.35em;
+
+  span { color: white; }
+}
+
+.header-subtitle {
+  margin: 0;
+  font-size: 1.1em;
+  font-weight: normal;
+
+  a { font-weight: bold; }
+}
+
+.header-text {
+  margin: 1.5em auto;
+  font-size: 1.12em;
+}

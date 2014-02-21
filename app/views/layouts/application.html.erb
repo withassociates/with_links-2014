@@ -1,23 +1,18 @@
 <!doctype html>
 <html>
 <head>
-  <title>WithLinksV2</title>
+  <title>With Links</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav class="primary-nav">
-    <div class="container">
-      <ul class="primary-nav-page-list">
-        <li class="primary-nav-page-list-item"><%= link_to "Home", root_path %></li>
-        <li class="primary-nav-page-list-item"><%= link_to "Themes", themes_path %></li>
-        <li class="primary-nav-page-list-item"><%= link_to "Top 10 Links", top_path %></li>
-        <li class="primary-nav-page-list-item"><%= link_to "About", about_path %></li>
-      </ul>
-    </div>
-</nav>
-<%= yield %>
+
+  <%= render "shared/header" %>
+
+  <%= yield %>
 
 </body>
 </html>

@@ -1,10 +1,8 @@
 @import 'bourbon';
-@import 'application/helpers';
-@import 'application/colors';
+
+@import 'application/reset';
 @import 'application/typography';
-@import 'application/layout';
-@import 'application/forms';
-@import 'application/index';
-@import 'application/buttons';
-@import 'application/link_list';
-@import 'application/navigation';
+@import 'application/colors';
+@import 'application/header';
+@import 'application/theme';
+@import 'application/sign_up';

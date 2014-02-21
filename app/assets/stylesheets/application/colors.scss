@@ -1,11 +1,11 @@
-$wa-white: #ffffff;
-$wa-light: #d4d4d4;
-$wa-medium: #808080;
-$wa-dark: #464646;
-$wa-blue: #35B1E7;
+$wl-navy: #005F80;
+$wl-light: #F2F2F2;
+$wl-blue: #00BDFF;
 
-$yellow: #f9ea3a;
+body {
+  color: $wl-navy;
+}
 
-a { color: $wa-dark; }
-
-::selection { background: $yellow; }
+a {
+  color: $wl-navy;
+}
