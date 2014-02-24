@@ -1,9 +1,26 @@
+.themes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .theme {
+  display: block;
+
   margin: 1.8em auto;
   padding: 1.8em 0;
   max-width: 880px;
 
   background: $wl-light;
+
+  &.listing {
+    text-decoration: none;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      margin: 20px;
+    }
+  }
 
   @media (max-width: 920px) {
     margin: 20px;
