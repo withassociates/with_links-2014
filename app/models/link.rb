@@ -7,6 +7,7 @@ class Link < ActiveRecord::Base
   belongs_to :theme
 
   scope :top_10, -> { order("votes DESC").limit(10) }
+  paginates_per 1
 
   def vote_up!
     increment!(:votes)

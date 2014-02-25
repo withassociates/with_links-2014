@@ -10,9 +10,6 @@
       <%= render theme.links %>
     </ul>
   <% end %>
-  <%= will_paginate @themes,
-    renderer: PaginationRenderer,
-    previous_label: "Next Issue →",
-    next_label: "← Previous Issue" %>
+  <%= paginate @themes %>
 </article>
 

@@ -1,5 +1,5 @@
 class ThemesController < ApplicationController
-  def view
+  def all
     @themes = Theme.published.order('issue_date DESC')
   end
 
@@ -12,6 +12,6 @@ class ThemesController < ApplicationController
   end
 
   def index
-    @themes = Theme.published.order('issue_number DESC').paginate(page: params[:page], per_page: 1)
+    @themes = Theme.published.order('issue_number DESC').page(params[:page])
   end
 end

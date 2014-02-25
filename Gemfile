@@ -25,7 +25,7 @@ gem 'aws-sdk'
 gem 'friendly_id', '~> 5.0.0'
 gem 'createsend'
 gem 'settingslogic'
-gem 'will_paginate', '~> 3.0'
+# gem 'will_paginate', '3.0.pre4'
 
 group :test do
   gem 'rspec-rails', '~> 3.0.0.beta1'
