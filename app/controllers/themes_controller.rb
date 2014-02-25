@@ -12,6 +12,6 @@ class ThemesController < ApplicationController
   end
 
   def index
-    @themes = Theme.published.order('issue_number DESC').page(params[:page]).per(1)
+    @theme = Theme.published.last
   end
 end

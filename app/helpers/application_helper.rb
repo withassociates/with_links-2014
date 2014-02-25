@@ -30,5 +30,19 @@ module ApplicationHelper
       link_to link.person.name, person_path(link.person)
     end
   end
+
+  def previous_theme(theme)
+    prev = Theme.published.find(theme.id - 1)
+    link_to "← #{prev.title}", theme_path(prev) unless prev.nil?
+  rescue ActiveRecord::RecordNotFound => e
+    prev = nil
+  end
+
+  def next_theme(theme)
+    forward = Theme.published.find(theme.id + 1)
+    link_to "#{forward.title} →", theme_path(forward) unless forward.nil?
+  rescue ActiveRecord::RecordNotFound => e
+    forward = nil
+  end
 end
 

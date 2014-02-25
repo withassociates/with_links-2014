@@ -8,4 +8,12 @@
   <ul class="theme-links">
     <%= render @theme.links %>
   </ul>
+
+  <div class="prev-next">
+    <%= previous_theme(@theme) %>&nbsp;&nbsp;&nbsp;&nbsp;<%= next_theme(@theme) %>
+  </div>
+
+  <div class="view-all-issues">
+    <%= link_to "View all Issues", all_themes_path %>
+  </div>
 </article>

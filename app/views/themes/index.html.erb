@@ -1,16 +1,17 @@
 <article class="theme" role="main">
-  <% @themes.each do |theme| %>
     <header class="theme-header">
-      <h3 class="theme-reference">Vol. 2 / Issue <%= theme.issue_number %></h3>
-      <h1 class="theme-title"><%= theme.title %></h1>
-      <h4 class="theme-date"><%= theme.issue_date %></h4>
+      <h3 class="theme-reference">Vol. 2 / Issue <%= @theme.issue_number %></h3>
+      <h1 class="theme-title"><%= @theme.title %></h1>
+      <h4 class="theme-date"><%= @theme.issue_date %></h4>
     </header>
 
     <ul class="theme-links">
-      <%= render theme.links %>
+      <%= render @theme.links %>
     </ul>
-  <% end %>
-  <%= paginate @themes, theme: 'home' %>
+
+  <div class="prev-next">
+    <%= previous_theme(@theme) %>&nbsp;&nbsp;&nbsp;&nbsp;<%= next_theme(@theme) %>
+  </div>
 
   <div class="view-all-issues">
     <%= link_to "View all Issues", all_themes_path %>
