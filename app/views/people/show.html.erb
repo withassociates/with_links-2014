@@ -1,1 +1,9 @@
-<h1><%= @person.name %></h1>
+<article class="theme" role="main">
+  <header class="theme-header">
+    <h1 class="theme-title"><%= @person.name %>'s Links</h1>
+  </header>
+  
+  <ul class="theme-links">
+    <%= render @person.links %>
+  </ul>
+</article>

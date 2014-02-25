@@ -4,7 +4,9 @@
   </div>
 
   <div class="right">
-    <h3 class="theme-link-person"><%= link.person.name %></h3>
+    <% unless controller_name == 'people' %>
+      <h3 class="theme-link-person"><%= link.person.name %></h3>
+    <% end %>
     <h2 class="theme-link-title"><%= link_unless_person_is_away(link) %></h2>
 
     <% unless link.is_away? %>
