@@ -27,7 +27,7 @@ module ApplicationHelper
     if controller_name == 'people'
       link.theme.title
     else
-      link.person.name
+      link_to link.person.name, person_path(link.person)
     end
   end
 end
