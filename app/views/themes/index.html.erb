@@ -11,5 +11,9 @@
     </ul>
   <% end %>
   <%= paginate @themes, theme: 'home' %>
+
+  <div class="view-all-issues">
+    <%= link_to "View all Issues", all_themes_path %>
+  </div>
 </article>
 
