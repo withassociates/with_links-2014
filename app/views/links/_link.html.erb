@@ -1,6 +1,6 @@
 <%= content_tag :li, class: 'theme-link' do %>
   <div class="left">
-    <%= image_tag icon_or_away_icon(link), width: 100 %>
+    <%= icon_link_unless_away(link) %>
   </div>
 
   <div class="right">
