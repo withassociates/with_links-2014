@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "themes/view.html.erb" do
+describe "themes/all.html.erb" do
   before do
     Person.create!(name: 'Calum')
     Theme.create!(
@@ -21,8 +21,7 @@ describe "themes/view.html.erb" do
   end
 
   it "displays a list of published Themes" do
-    pending
-    visit '/themes/view'
+    visit '/themes/all'
 
     page.should have_content('First Theme')
     page.should have_content('Second Theme')
