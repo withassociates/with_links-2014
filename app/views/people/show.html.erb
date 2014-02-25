@@ -4,6 +4,8 @@
   </header>
   
   <ul class="theme-links">
-    <%= render @person.links %>
+    <%= render @links %>
   </ul>
+
+  <%= will_paginate @links %>
 </article>
