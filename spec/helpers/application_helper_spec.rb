@@ -42,16 +42,6 @@ describe ApplicationHelper do
     end
   end
 
-  describe "#icon_or_away_icon" do
-    it "returns the suitcase icon if the person is away" do
-      helper.icon_or_away_icon(link_away).should eq('suitcase.png')
-    end
-
-    it "returns the link's icon if the person is not away" do
-      helper.icon_or_away_icon(link_not_away).should_not eq('suitcase.png')
-    end
-  end
-
   describe "#icon_credit" do
     it "returns the suitcase icon credit if the person is away" do
       helper.icon_credit(link_away).should eq("Suitcase by Diego Naive from the Noun Project")
