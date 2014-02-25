@@ -5,6 +5,6 @@ class PeopleController < ApplicationController
 
   def show
     @person = Person.friendly.find(params[:id])
-    @links = Link.where(person: @person).page(params[:page])
+    @links = Link.where(person: @person).page(params[:page]).per(10)
   end
 end

@@ -40,8 +40,12 @@ ActiveAdmin.register Theme do
     end
     f.inputs do
       f.has_many :links, allow_destroy: true, heading: 'Links' do |cf|
-        cf.input :icon, as: :file, hint: cf.template.image_tag(cf.object.icon.url(:thumb))
         cf.input :person
+        cf.inputs "Icon", multipart: true do
+          cf.input :icon, as: :file, hint: cf.object.icon.present? \
+          ? cf.template.image_tag(cf.object.icon.url(:thumb))
+          : cf.template.content_tag(:span, "No image yet!")
+        end
         cf.input :is_away, label: "Person is away?"
         cf.input :title
         cf.input :url, label: "URL"

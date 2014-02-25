@@ -8,5 +8,4 @@ class Theme < ActiveRecord::Base
   accepts_nested_attributes_for :links, allow_destroy: true
 
   scope :published, -> { where(published: true) }
-  paginates_per 1
 end
