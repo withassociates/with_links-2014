@@ -22,4 +22,13 @@ module ApplicationHelper
       link.icon_attribution
     end
   end
+
+  def person_or_theme(link)
+    if controller_name == 'people'
+      link.theme.title
+    else
+      link.person.name
+    end
+  end
 end
+
