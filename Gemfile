@@ -7,6 +7,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'bourbon'
+  gem 'dotenv-rails'
 end
 
 group :production do
@@ -30,5 +31,6 @@ group :test do
   gem 'rspec-rails', '~> 3.0.0.beta1'
   gem 'capybara'
   gem 'codeclimate-test-reporter', require: nil
+  gem 'dotenv-rails'
 end
 
