@@ -23,8 +23,8 @@ describe "Viewing the /themes page" do
   it "displays a list of published Themes" do
     visit '/themes'
 
-    page.should have_content('First Theme')
-    page.should have_content('Second Theme')
-    page.should_not have_content('Unpublished Theme')
+    expect(page).to have_content('First Theme')
+    expect(page).to have_content('Second Theme')
+    expect(page).to_not have_content('Unpublished Theme')
   end
 end

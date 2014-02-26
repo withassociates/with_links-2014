@@ -34,21 +34,21 @@ describe ApplicationHelper do
 
   describe "#link_unless_person_is_away" do
     it "returns 'is Away' if the person is away" do
-      helper.link_unless_person_is_away(link_away).should eq("is Away")
+      expect(helper.link_unless_person_is_away(link_away)).to eq("is Away")
     end
 
     it "returns the link if the person is not away" do
-      helper.link_unless_person_is_away(link_not_away).should eq('<a href="http://www.google.com">Google</a>')
+      expect(helper.link_unless_person_is_away(link_not_away)).to eq('<a href="http://www.google.com">Google</a>')
     end
   end
 
   describe "#icon_credit" do
     it "returns the suitcase icon credit if the person is away" do
-      helper.icon_credit(link_away).should eq("Suitcase by Diego Naive from the Noun Project")
+      expect(helper.icon_credit(link_away)).to eq("Suitcase by Diego Naive from the Noun Project")
     end
 
     it "returns the uploaded icon credit if the person is away" do
-      helper.icon_credit(link_not_away).should eq("Icon by A Person from the Noun Project")
+      expect(helper.icon_credit(link_not_away)).to eq("Icon by A Person from the Noun Project")
     end
   end
 end

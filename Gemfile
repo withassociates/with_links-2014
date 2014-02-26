@@ -7,13 +7,14 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'bourbon'
-  gem 'dotenv-rails'
 end
 
 group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+
+gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
@@ -31,6 +32,5 @@ group :test do
   gem 'rspec-rails', '~> 3.0.0.beta1'
   gem 'capybara'
   gem 'codeclimate-test-reporter', require: nil
-  gem 'dotenv-rails'
 end
 

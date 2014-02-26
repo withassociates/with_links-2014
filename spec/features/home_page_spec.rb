@@ -39,9 +39,9 @@ describe "Home page" do
   it "displays the latest theme" do
     visit '/'
 
-    expect(page).to have_content("Testing")
-    expect(page).to have_content("Calum")
-    expect(page).to have_content("Joseph")
+    expect(page).to have_text("Testing")
+    expect(page).to have_text("Calum")
+    expect(page).to have_text("Joseph")
   end
 end
 

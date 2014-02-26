@@ -20,8 +20,8 @@ describe "themes/show.html.erb" do
   it "displays the links in a theme" do
     visit '/themes/with-links-theme'
 
-    page.should have_content('With Links Theme')
-    page.should have_content('First Link')
-    page.should have_content('A link on a Theme page')
+    expect(page).to have_content('With Links Theme')
+    expect(page).to have_content('First Link')
+    expect(page).to have_content('A link on a Theme page')
   end
 end
