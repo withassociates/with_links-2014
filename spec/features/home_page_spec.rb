@@ -36,26 +36,12 @@ describe "Home page" do
     )
   end
 
-  it "displays the home page and allows one vote" do
-    pending
-
+  it "displays the latest theme" do
     visit '/'
 
-    expect(page).to have_content("Theme 1: Testing")
+    expect(page).to have_content("Testing")
     expect(page).to have_content("Calum")
     expect(page).to have_content("Joseph")
-
-    # Vote for link
-    expect(page).to have_content("Vote for this With Link!")
-
-    within("#link_#{link.id}") do
-      click_link("Vote for this With Link!")
-      # expect(page).to have_content("1 vote for the With Link")
-      # expect(page).to_not have_content("Vote for this With Link!")
-    end
-
-    link.reload
-    expect(link.votes).to eq(1)
   end
 end
 
