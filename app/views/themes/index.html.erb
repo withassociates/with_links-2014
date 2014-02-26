@@ -2,6 +2,11 @@
   <% @themes.each do |theme| %>
     <li>
       <%= link_to theme_path(theme), class: 'theme listing' do %>
+        <% if theme == @themes.first %>
+          <div class="latest-issue">
+            Latest Issue
+          </div>
+        <% end %>
         <h4 class="theme-reference">Vol. 2 / Issue <%= theme.issue_number %></h4>
         <h3 class="theme-title"><%= theme.title %></h3>
         <h5 class="theme-date"><%= theme.issue_date %></h5>
