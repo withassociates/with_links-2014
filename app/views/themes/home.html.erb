@@ -1,0 +1,20 @@
+<article class="theme" role="main">
+    <header class="theme-header">
+      <h3 class="theme-reference">Vol. 2 / Issue <%= @theme.issue_number %></h3>
+      <h1 class="theme-title"><%= @theme.title %></h1>
+      <h4 class="theme-date"><%= @theme.issue_date %></h4>
+    </header>
+
+    <ul class="theme-links">
+      <%= render @theme.links %>
+    </ul>
+
+  <div class="prev-next">
+    <%= previous_theme(@theme) %>&nbsp;&nbsp;&nbsp;&nbsp;<%= next_theme(@theme) %>
+  </div>
+
+  <div class="view-all-issues">
+    <%= link_to "View all Issues", themes_path %>
+  </div>
+</article>
+
