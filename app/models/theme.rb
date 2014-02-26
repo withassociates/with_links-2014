@@ -7,5 +7,13 @@ class Theme < ActiveRecord::Base
 
   accepts_nested_attributes_for :links, allow_destroy: true
 
-  scope :published, -> { where(published: true) }
+  scope :published, -> { where(published: true).order('issue_number') }
+
+  def previous
+    self.class.published.where('issue_number < ?', self.issue_number).last
+  end
+
+  def next
+    self.class.published.where('issue_number > ?', self.issue_number).first
+  end
 end
