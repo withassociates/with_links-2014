@@ -17,7 +17,7 @@ module ApplicationHelper
 
   def icon_link_unless_away(link)
     if link.is_away?
-      image_tag 'suitcase.png'
+      image_tag 'suitcase.png', width: 100
     else
       link_to image_tag(link.icon(:thumb), width: 100), link.url
     end
