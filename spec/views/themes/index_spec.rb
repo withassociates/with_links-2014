@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "themes/index.html.erb" do
+describe "Viewing the /themes page" do
   before do
     Person.create!(name: 'Calum')
     Theme.create!(
@@ -13,25 +13,18 @@ describe "themes/index.html.erb" do
       issue_number: 02,
       published: true
     )
-    Link.create!(
-      person_id: 1,
-      theme_id: 1,
-      url: 'http://www.google.com',
-      title: 'A Link In Theme One',
-      description: 'This is a link in theme one'
-    )
-    Link.create!(
-      person_id: 1,
-      theme_id: 2,
-      url: 'http://www.facebook.com',
-      title: 'A Link In Theme Two',
-      description: 'This is a link in theme two'
+    Theme.create!(
+      title: 'Unpublished Theme',
+      issue_number: 03,
+      published: false
     )
   end
 
-  it "displays the latest theme and its links" do
-    visit '/'
-    page.should have_content('A Link In Theme Two')
-    page.should_not have_content('A Link In Theme One')
+  it "displays a list of published Themes" do
+    visit '/themes'
+
+    page.should have_content('First Theme')
+    page.should have_content('Second Theme')
+    page.should_not have_content('Unpublished Theme')
   end
 end

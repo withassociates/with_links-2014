@@ -7,7 +7,7 @@ WithLinksV2::Application.routes.draw do
   # get "links/top", as: "top"
   # post "links/vote/:id", to: 'links#vote', as: 'vote'
 
-  resources :themes, :links, :people
+  resources :themes, :links, :people, only: [:show, :index]
 
   root 'themes#home'
 end
