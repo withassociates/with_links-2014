@@ -1,12 +1,12 @@
-<article class="theme" role="main">
   <header class="theme-header">
-    <h1 class="theme-title">With Associates</h1>
+    <h1 class="theme-title">With</h1>
   </header>
 
-  <ul class="theme-links">
+  <ul class="themes">
     <% @people.each do |person| %>
-      <li><%= link_to person.name, person_path(person) %></li>
+      <li><%= link_to person_path(person), class: 'theme listing' do %>
+        <h3 class="theme-title"><%= person.name %></h3>
+      <% end %>
+      </li>
     <% end %>
   </ul>
-</article>
-
