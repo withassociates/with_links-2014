@@ -17,3 +17,4 @@
 
 # Ignore the public/system folder
 /public/system
+/coverage
