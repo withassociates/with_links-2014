@@ -1,6 +1,8 @@
 class Theme < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: :slugged
+
+  default_scope { order("issue_number DESC") }
   validates_presence_of :title
 
   has_many :links

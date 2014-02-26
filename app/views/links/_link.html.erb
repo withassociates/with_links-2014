@@ -1,4 +1,4 @@
-<%= content_tag :li, class: 'theme-link' do %>
+<%= content_tag_for :li, link, class: 'theme-link' do %>
   <div class="left">
     <%= icon_link_unless_away(link) %>
   </div>
@@ -9,7 +9,7 @@
 
     <% unless link.is_away? %>
       <div class="theme-link-text">
-        <%= link.description.html_safe %>
+        <%= link.description.html_safe if link.description.present? %>
       </div>
     <% end %>
 

@@ -18,7 +18,7 @@ ActiveAdmin.register Theme do
 
   menu :label => "Themes"
   permit_params :issue_date, :title, :issue_number, :published, :sent,
-    links_attributes: [:id, :title, :url, :description, :icon, :icon_attribution_file, 
+    links_attributes: [:id, :sort_order, :title, :issue_number, :url, :description, :icon, :icon_attribution_file, 
                        :is_away, :person, :person_id, :_destroy]
 
   index do
@@ -38,14 +38,13 @@ ActiveAdmin.register Theme do
       f.input :published, label: "Published to site?"
       f.input :sent, label: "Mailout sent?"
     end
-    f.inputs do
-      f.has_many :links, allow_destroy: true, heading: 'Links' do |cf|
+    f.inputs "Links" do
+      f.has_many :links, for: [:links, f.object.links.sorted], allow_destroy: true do |cf|
+        cf.input :sort_order, label: "Place in order", as: :select, collection: (1..Person.count)
         cf.input :person
-        cf.inputs "Icon", multipart: true do
-          cf.input :icon, as: :file, hint: cf.object.icon.present? \
-          ? cf.template.image_tag(cf.object.icon.url(:thumb))
-          : cf.template.content_tag(:span, "No image yet!")
-        end
+        cf.input :icon, as: :file, hint: cf.object.icon.present? \
+        ? cf.template.image_tag(cf.object.icon.url(:thumb))
+        : cf.template.content_tag(:span, "No image yet!")
         cf.input :is_away, label: "Person is away?"
         cf.input :title
         cf.input :url, label: "URL"
