@@ -1,0 +1,28 @@
+.people {
+  margin: 1.8em auto;
+  max-width: 540px;
+}
+
+.people-title {
+  font-size: 1em;
+  text-align: center;
+}
+
+.people-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.person-link {
+  display: block;
+
+  margin-bottom: 0.35em;
+  border-bottom: 1px solid mix(white, black, 75%);
+  padding: 0.35em 0.65em;
+
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
+  background: $wl-light;
+}
