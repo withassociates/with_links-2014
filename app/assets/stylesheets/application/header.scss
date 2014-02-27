@@ -2,8 +2,12 @@
   overflow: hidden;
   padding: 1.8em;
 
+  font-size: 14px;
+  line-height: 1.5em;
   text-align: center;
   background: $wl-blue;
+
+  a { font-weight: 700; }
 
   .container {
     margin: 0 auto;
@@ -16,21 +20,15 @@ a.header-root-link {
 }
 
 .header-title {
-  margin: 0;
-  font-size: 3.35em;
+  margin: 0.4477em 0 0.4477em 0;
+
+  font-size: 4em;
+  line-height: 1.5em;
 
   span { color: white; }
 }
 
-.header-subtitle {
-  margin: 0;
-  font-size: 1.1em;
-  font-weight: normal;
-
-  a { font-weight: bold; }
-}
-
 .header-text {
-  margin: 1.5em auto;
+  margin: -1.5em auto 3em auto;
   font-size: 1.12em;
 }
