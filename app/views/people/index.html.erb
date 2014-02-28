@@ -5,7 +5,7 @@
 
   <ul class="people-list">
     <% @people.each do |person| %>
-      <li class="people-list-item">
+      <li>
         <%= link_to person.name, person_path(person), class: 'person-link' %>
       </li>
     <% end %>

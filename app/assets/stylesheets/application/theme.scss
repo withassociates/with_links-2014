@@ -72,9 +72,18 @@
   float: left;
   position: relative;
 
-  padding-top: 45%;
-  width: 33.3333%;
+  padding-top: 75%;
+  width: 100%;
 
+  @media (min-width: 320px) {
+    padding-top: 80%;
+    width: 50%;
+  }
+
+  @media (min-width: 640px) {
+    padding-top: 40%;
+    width: 33.3333%;
+  }
 }
 
 .theme-list-item-content {
