@@ -1,7 +1,7 @@
 module ApplicationHelper
   def link_unless_person_is_away(link)
     if link.is_away?
-      "is Away"
+      "#{link.person.name} is away"
     else
       link_to link.title, link.url
     end
