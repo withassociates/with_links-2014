@@ -11,7 +11,24 @@
 .people-list {
   margin: 0;
   padding: 0;
+
   list-style: none;
+}
+
+.people-list-item {
+  position: relative;
+
+  &:after {
+    content: '';
+
+    position: absolute;
+    top: 25px; right: 15px;
+
+    height: 16px;
+    width: 10px;
+
+    background: url('right-arrow.png');
+  }
 }
 
 .person-link {
@@ -19,7 +36,7 @@
 
   margin-bottom: 0.35em;
   border-bottom: 1px solid mix(white, black, 75%);
-  padding: 0.35em 0.65em;
+  padding: 0.5em 0.65em;
 
   font-size: 1.5em;
   font-weight: bold;
