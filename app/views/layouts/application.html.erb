@@ -1,8 +1,13 @@
 <!doctype html>
-<html>
+<!--[if lt IE 9]><html class="lte-ie8"><![endif]-->
+<!--[if gt IE 8]><!--><html><!--<![endif]-->
 <head>
   <title>With Links</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--[if lt IE 9]>
+  <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.min.js" %>
+  <![endif]-->
 
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
