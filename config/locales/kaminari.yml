@@ -1,7 +1,5 @@
 en:
   views:
     pagination:
-      first: "First"
-      previous: "Next →"
-      next: "← Previous"
-      last: "Last"
+      previous: "Newer Links"
+      next: "Older Links"
