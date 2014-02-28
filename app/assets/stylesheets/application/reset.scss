@@ -6,6 +6,12 @@ body {
   min-width: 320px;
 }
 
+.lte-ie8 {
+  body {
+    min-width: 960px;
+  }
+}
+
 img {
   border: 0;
 }

@@ -45,6 +45,13 @@
   }
 }
 
+.lte-ie8 {
+  .theme-list-item {
+    padding-top: 40%;
+    width: 33.3333%;
+  }
+}
+
 .theme-list-item {
   float: left;
   position: relative;
