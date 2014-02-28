@@ -7,4 +7,8 @@ WithLinksV2::Application.routes.draw do
   resources :themes, :links, :people, only: [:show, :index]
 
   root 'themes#home'
+
+  constraints domain: 'withlinks.com' do
+    get ':any', to: redirect(domain: 'links.withassociates.com', path: '/%{any}'), any: /.*/
+  end
 end
