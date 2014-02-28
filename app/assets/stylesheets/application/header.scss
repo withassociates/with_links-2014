@@ -15,6 +15,15 @@
     margin: 0 auto;
     max-width: 540px;
   }
+
+  .icon-twitter {
+    font-size: 0.825em;
+
+    span {
+      position: absolute;
+      left: -9999em;
+    }
+  }
 }
 
 a.header-root-link {
@@ -40,16 +49,6 @@ a.header-root-link {
 
   text-decoration: none;
 }
-
-.icon-twitter {
-  font-size: 1em !important;
-
-  span {
-    position: absolute;
-    left: -9999em;
-  }
-}
-
 .flash-thanks {
   margin-top: 1em;
   padding: 1em;
