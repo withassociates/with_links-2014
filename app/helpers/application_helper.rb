@@ -33,13 +33,13 @@ module ApplicationHelper
 
   def previous_theme(theme)
     if previous = theme.previous
-      link_to "← #{previous.title}", theme_path(previous)
+      link_to "&larr; #{previous.title}".html_safe, theme_path(previous)
     end
   end
 
   def next_theme(theme)
     if forward = theme.next
-      link_to "#{forward.title} →", theme_path(forward)
+      link_to "#{forward.title} &rarr;".html_safe, theme_path(forward)
     end
   end
 end
