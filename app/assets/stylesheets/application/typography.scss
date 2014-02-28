@@ -25,19 +25,7 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Publico Headline';
-  src: font-url('PublicoHeadline-Medium-Web.eot');
-  src: font-url('PublicoHeadline-Medium-Web.eot#iefix') format('embedded-opentype'),
-       font-url('PublicoHeadline-Medium-Web.woff') format('woff'),
-       font-url('PublicoHeadline-Medium-Web.ttf') format('truetype'),
-       font-url('PublicoHeadline-Medium-Web.svg#PublicoHeadlineWeb') format('svg');
-  font-weight: 500;
-  font-style: normal;
-}
-
 $sans: 'Colfax', sans-serif;
-$serif: 'Publico Headline', serif;
 
 body {
   font-family: $sans;
