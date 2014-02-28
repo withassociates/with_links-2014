@@ -31,18 +31,5 @@ ActiveAdmin.register_page "Dashboard" do
         end
       end
     end
-
-    columns do
-      column do
-        panel "Top 10 With Links OF ALL TIME!" do
-          table_for Link.all.order("votes DESC").limit(10) do
-            column("Person") { |link| link.person.name }
-            column("Link") { |link| link_to(link.title, link.url) }
-            column("Description") { |link| truncate(link.description, length: 100) }
-            column("Votes") { |link| link.votes }
-          end
-        end
-      end
-    end
   end
 end
