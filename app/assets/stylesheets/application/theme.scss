@@ -136,8 +136,11 @@
 .theme {
   display: block;
 
-  margin: 1.8em 0;
+  padding: 1.8em 0;
+  margin: 1.8em auto;
   max-width: 880px;
+
+  background: $wl-light;
 
   &.listing {
     text-decoration: none;
