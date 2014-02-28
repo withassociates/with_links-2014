@@ -5,8 +5,9 @@
   overflow: hidden;
 
   border-radius: 2px;
-  width: 100%;
-  height: 2.95em;
+  width: auto;
+  margin: 0 50px;
+  height: 3.95em;
 
   border-top: 1px solid rgba(0,0,0,0.2);
 }
@@ -25,8 +26,8 @@
 
   @include appearance(none);
 
-  padding: 0.6875em;
-  height: 2.95em;
+  padding: 1.25em;
+  height: 3.95em;
 
   font-family: $sans;
   font-size: 1em;
@@ -53,7 +54,7 @@
 
 .sign-up-button {
   display: block;
-  @include position(absolute, 0px 0px 0px 0);
+  @include position(absolute, -2px 0px 0px 0);
 
   border-radius: 2px;
   font-weight: bold;
@@ -63,9 +64,9 @@
     content: '';
     display: block;
 
-    @include position(absolute, 50% 0.6875em 0 0.6875em);
+    @include position(absolute, 50% 1.25em 0 1.25em);
 
-    margin-top: 0.5em;
+    margin-top: 0.75em;
     height: 2px;
     background: $wl-blue;
   }
