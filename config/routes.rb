@@ -8,7 +8,7 @@ WithLinksV2::Application.routes.draw do
 
   root 'themes#home'
 
-  constraints domain: 'withlinks.com' do
-    get ':any', to: redirect(domain: 'links.withassociates.com', path: '/%{any}'), any: /.*/
+  constraints host: /withlinks.com/ do
+    match '/(*path)' =>  redirect {|params, req| 'http://links.withassociates.com/#{params[:path]}'}, via: [:get, :post]
   end
 end
