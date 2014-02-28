@@ -34,7 +34,7 @@ describe ApplicationHelper do
 
   describe "#link_unless_person_is_away" do
     it "returns 'is Away' if the person is away" do
-      expect(helper.link_unless_person_is_away(link_away)).to eq("is Away")
+      expect(helper.link_unless_person_is_away(link_away)).to eq("Calum is away")
     end
 
     it "returns the link if the person is not away" do
