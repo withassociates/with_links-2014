@@ -48,7 +48,17 @@ a.header-root-link {
   margin: 0 10px;
 
   text-decoration: none;
+
+  .icon-twitter {
+    font-size: 1em !important;
+
+    span {
+      position: absolute;
+      left: -9999em;
+    }
+  }
 }
+
 .flash-thanks {
   margin-top: 1em;
   padding: 1em;
