@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   def redirect_if_old_url
     if request.host == 'withlinks.com'
-      redirect_to "http://links.withassociates.com#{request.request_uri}", status: :moved_permanently
+      redirect_to "http://links.withassociates.com#{request.fullpath}", status: :moved_permanently
     end
   end
 end
