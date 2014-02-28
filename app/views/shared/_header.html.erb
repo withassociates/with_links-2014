@@ -21,5 +21,11 @@
     </div>
 
     <%= render "shared/sign_up" %>
+
+    <% if params[:thanks] %>
+      <div class="flash-thanks">
+        Thank you! You'll receive your first issue of With Links on Friday.
+      </div>
+    <% end %>
   </div>
 </header>
