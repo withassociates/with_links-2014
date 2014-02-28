@@ -34,3 +34,18 @@ a.header-root-link {
   margin: -1.5em auto 3em auto;
   font-size: 1.12em;
 }
+
+.nav-item {
+  margin: 0 10px;
+
+  text-decoration: none;
+}
+
+.icon-twitter {
+  font-size: 1em !important;
+
+  span {
+    position: absolute;
+    left: -9999em;
+  }
+}

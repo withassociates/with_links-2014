@@ -1,11 +1,13 @@
 <header id="header" role="banner">
   <div class="container">
     <nav>
-      <%= link_to "Home", root_path %>
-      <%= link_to "Themes", themes_path %>
-      <%= link_to "People", people_path %>
+      <%= link_to "Home", root_path, class: 'nav-item' %>
+      <%= link_to "Themes", themes_path, class: 'nav-item' %>
+      <%= link_to "People", people_path, class: 'nav-item' %>
       /
-      <%= link_to "Twitter Icon", 'http://www.twitter.com/withlinks' %>
+      <%= link_to 'http://www.twitter.com/withlinks', class: 'nav-item icon-twitter' do %>
+        <span>Twitter</span>
+      <% end %>
     </nav>
     <%= link_to root_path, class: "header-root-link" do %>
       <h1 class="header-title"><span>With</span>Links</h1>
