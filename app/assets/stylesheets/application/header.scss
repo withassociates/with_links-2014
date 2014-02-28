@@ -1,6 +1,6 @@
 #header {
   overflow: hidden;
-  padding: 1.8em 0 30px 0;
+  padding: 1.8em 1em 30px 1em;
 
   font-size: 14px;
   line-height: 1.5em;
@@ -34,14 +34,16 @@ a.header-root-link {
   display: block;
   overflow: hidden;
 
-  height: 143px;
   margin: 40px auto 25px auto;
-  width: 350px;
 
-  text-indent: -9999em;
+  img { max-width: 100%; }
 
-  background-image: image-url('with-links-logo.gif');
-  background-size: 100%;
+  @media (max-width: 380px) {
+    img {
+      width: auto;
+      height: auto;
+    }
+  }
 }
 
 .header-text {
