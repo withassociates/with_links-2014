@@ -1,8 +1,7 @@
 ActiveAdmin.register Link do
-  # belongs_to :theme
-  # belongs_to :person
+  config.sort_order = "sort_order_asc"
   menu :label => "Links"
-  permit_params :title, :url, :description, :icon, :icon_attribution_file, :is_away, :person, :person_id,
+  permit_params :sort_order, :title, :url, :description, :icon, :icon_attribution_file, :is_away, :person, :person_id,
     people_attributes: [:id, :name]
 
   index do

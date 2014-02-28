@@ -11,3 +11,4 @@ class ThemesController < ApplicationController
     @theme = Theme.published.first
   end
 end
+

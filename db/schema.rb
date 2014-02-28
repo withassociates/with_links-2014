@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140226101646) do
+ActiveRecord::Schema.define(version: 20140226154830) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -78,7 +78,10 @@ ActiveRecord::Schema.define(version: 20140226101646) do
     t.integer  "icon_attribution_file_file_size"
     t.datetime "icon_attribution_file_updated_at"
     t.string   "icon_attribution"
+    t.integer  "sort_order"
   end
+
+  add_index "links", ["sort_order"], name: "index_links_on_sort_order"
 
   create_table "people", force: true do |t|
     t.string   "name"
