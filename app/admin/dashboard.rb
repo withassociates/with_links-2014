@@ -20,13 +20,11 @@ ActiveAdmin.register_page "Dashboard" do
       end
     end
 
-    if Theme.last.links.count >= 9
-      columns do
-        column do
-          panel "Send this week's With Links" do
-            div(id: "send_mailout") do
-              link_to("This will send the mailout", root_path)
-            end
+    columns do
+      column do
+        panel "Send this week's With Links" do
+          div(id: "send_mailout") do
+            link_to("Send the latest 'Ready To Send' Theme", latest_issue_path)
           end
         end
       end

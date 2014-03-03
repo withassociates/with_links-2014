@@ -18,3 +18,6 @@
 # Ignore the public/system folder
 /public/system
 /coverage
+
+# Ignore environment variables
+.env
