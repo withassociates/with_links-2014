@@ -1,4 +1,6 @@
 ActiveAdmin.register Theme do
+  config.sort_order = "issue_date DESC"
+
   controller do
     def find_resource
       scoped_collection.friendly.find(params[:id])
