@@ -14,6 +14,7 @@ class SendThemeAsEmail
       auth, client_id, subject, name, from_name, from_email,
       reply_to, html_url, text_url, list_ids, segment_ids
     )
+    campaign.send(ENV['CREATESEND_CONFIRMATION_EMAIL'])
     theme.mark_as_sent!
   end
 
