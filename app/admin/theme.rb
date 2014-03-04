@@ -37,7 +37,7 @@ ActiveAdmin.register Theme do
       f.input :issue_date, label: "Issue date"
       f.input :issue_number, label: "Issue number"
       f.input :published, label: "Published to site?"
-      f.input :ready_to_send, label: "Ready to send?"
+      f.input :ready_to_send, label: "Ready to send?", as: :boolean
     end
     f.inputs "Links" do
       f.has_many :links, for: [:links, f.object.links.sorted], allow_destroy: true do |cf|
