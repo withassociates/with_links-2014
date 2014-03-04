@@ -51,7 +51,7 @@ class SendThemeAsEmail
   end
 
   def html_url
-    theme_url(theme, format: :email)
+    theme_url(theme, format: :email, host: "links.withassociates.com")
   end
 
   def text_url
