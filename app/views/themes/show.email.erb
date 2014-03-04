@@ -343,7 +343,9 @@ table a {
       <td class="credits">
         <p>
           <% @theme.links.each do |link| %>
-            <%= icon_credit(link).html_safe if link.icon_attribution.present? %><br>
+            <% if link.icon_attribution.present? %>
+              <%= icon_credit(link).html_safe %><br>
+            <% end %>
           <% end %>
         </p>
       </td>
