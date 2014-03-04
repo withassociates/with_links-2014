@@ -19,7 +19,6 @@ class ThemesController < ApplicationController
   def email
     @theme = Theme.ready_for_email
     job = SendThemeAsEmail.new(@theme)
-    logger.info "THEME -> #{job.send :html_url}"
     job.run
     redirect_to root_path
   end

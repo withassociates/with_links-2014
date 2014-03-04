@@ -1,5 +1,4 @@
 ActiveAdmin.register_page "Dashboard" do
-
   menu :priority => 1, :label => proc{ I18n.t("active_admin.dashboard") }
 
   content :title => proc{ I18n.t("active_admin.dashboard") } do
@@ -23,8 +22,8 @@ ActiveAdmin.register_page "Dashboard" do
       column do
         panel "Send this week's With Links" do
           div(id: "send_mailout") do
-            link_to("Send the latest 'Ready To Send' Theme", latest_issue_path,
-                   data: { confirm: "Are you sure?" })
+            link_to("Send this week's With Links", latest_issue_path,
+                   data: { confirm: "Are you sure?" }, class: 'send-email-button')
           end
         end
       end
