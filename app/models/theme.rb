@@ -28,4 +28,9 @@ class Theme < ActiveRecord::Base
     self.sent_at = Time.now
     save!
   end
+
+  def mark_as_unsent!
+    self.sent_at = nil
+    save!
+  end
 end
