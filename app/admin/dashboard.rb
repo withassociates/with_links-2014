@@ -24,7 +24,8 @@ ActiveAdmin.register_page "Dashboard" do
       column do
         panel "Send this week's With Links" do
           div(id: "send_mailout") do
-            link_to("Send the latest 'Ready To Send' Theme", latest_issue_path)
+            link_to("Send the latest 'Ready To Send' Theme", latest_issue_path,
+                   data: { confirm: "Are you sure?" })
           end
         end
       end
