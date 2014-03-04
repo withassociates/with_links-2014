@@ -17,7 +17,7 @@ ActiveAdmin.register Theme do
   end
 
   menu :label => "Themes"
-  permit_params :issue_date, :title, :issue_number, :published, :sent,
+  permit_params :issue_date, :title, :issue_number, :published, :ready_to_send,
     links_attributes: [:id, :sort_order, :title, :issue_number, :url, :description, :icon, :icon_attribution_file, 
                        :is_away, :person, :person_id, :_destroy]
 
@@ -26,7 +26,8 @@ ActiveAdmin.register Theme do
     column :issue_date
     column :issue_number
     column :published
-    column :sent
+    column :ready_to_send
+    column :sent_at
     default_actions
   end
 
@@ -36,7 +37,7 @@ ActiveAdmin.register Theme do
       f.input :issue_date, label: "Issue date"
       f.input :issue_number, label: "Issue number"
       f.input :published, label: "Published to site?"
-      f.input :sent, label: "Mailout sent?"
+      f.input :ready_to_send, label: "Ready to send?"
     end
     f.inputs "Links" do
       f.has_many :links, for: [:links, f.object.links.sorted], allow_destroy: true do |cf|

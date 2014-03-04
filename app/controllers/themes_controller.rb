@@ -5,10 +5,21 @@ class ThemesController < ApplicationController
 
   def show
     @theme = Theme.friendly.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.email
+    end
   end
 
   def home
     @theme = Theme.published.first
+  end
+
+  def email
+    @theme = Theme.ready_for_email
+    SendThemeAsEmail.new(@theme).run
+    redirect_to root_path
   end
 end
 

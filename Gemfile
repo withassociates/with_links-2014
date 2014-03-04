@@ -29,11 +29,10 @@ gem 'friendly_id', '~> 5.0.0'
 gem 'createsend'
 gem 'settingslogic'
 
-
 group :test do
   gem 'rspec-rails', '~> 3.0.0.beta1'
   gem 'capybara'
-  gem 'codeclimate-test-reporter', require: nil
+  gem 'codeclimate-test-reporter'
   gem 'launchy'
 end
 

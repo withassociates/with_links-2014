@@ -4,11 +4,9 @@ WithLinksV2::Application.routes.draw do
 
   get "pages/about", as: "about"
 
+  get '/latest-issue', to: 'themes#email', as: 'latest_issue'
+
   resources :themes, :links, :people, only: [:show, :index]
 
   root 'themes#home'
-
-  # constraints(host: /withlinks.com/) do
-  #   match "/(*path)" =>  redirect {|params, req| "links.withassociates.com/#{params[:path]}"}, via: [:get, :post]
-  # end
 end
