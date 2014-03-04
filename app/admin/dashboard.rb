@@ -7,9 +7,9 @@ ActiveAdmin.register_page "Dashboard" do
       column do
         panel "This Week's With Links" do
           div(class: "theme_title") do
-            Theme.last.title
+            Theme.first.title
           end
-          table_for Theme.last.links.order("votes DESC") do
+          table_for Theme.first.links.order("votes DESC") do
             column("Person") { |link| link.person.name }
             column("Link") { |link| link_to(link.title, link.url) }
             column("Description") { |link| truncate(link.description, length: 100) }
