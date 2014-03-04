@@ -8,6 +8,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'bourbon'
   gem 'pry-rails'
+  gem 'foreman'
 end
 
 group :production do
@@ -28,6 +29,7 @@ gem 'aws-sdk'
 gem 'friendly_id', '~> 5.0.0'
 gem 'createsend'
 gem 'settingslogic'
+gem 'unicorn'
 
 group :test do
   gem 'rspec-rails', '~> 3.0.0.beta1'
