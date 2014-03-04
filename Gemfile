@@ -7,7 +7,6 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'bourbon'
-  gem 'pry-rails'
   gem 'foreman'
 end
 
@@ -16,7 +15,10 @@ group :production do
   gem 'rails_12factor'
 end
 
-gem 'dotenv-rails', groups: [:development, :test]
+group :development, :test do
+  gem 'dotenv-rails'
+  gem 'pry-rails'
+end
 
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
@@ -32,9 +34,10 @@ gem 'settingslogic'
 gem 'unicorn'
 
 group :test do
-  gem 'rspec-rails', '~> 3.0.0.beta1'
+  gem 'rspec-rails'
   gem 'capybara'
   gem 'codeclimate-test-reporter'
   gem 'launchy'
+  gem 'database_cleaner'
 end
 
