@@ -68,6 +68,12 @@ class SendThemeAsEmail
   end
 
   def segment_ids
-    [ENV['CREATESEND_SEGMENT_ID']].reject(&:blank?)
+    ids = [ENV['CREATESEND_SEGMENT_ID']].reject(&:blank?)
+
+    if ids.any?
+      ids
+    else
+      nil
+    end
   end
 end
