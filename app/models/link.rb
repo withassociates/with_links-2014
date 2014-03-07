@@ -8,6 +8,7 @@ class Link < ActiveRecord::Base
   belongs_to :theme
 
   scope :sorted, -> { order("sort_order ASC") }
+  default_scope order "sort_order ASC"
 
   def icon_attribution_file=(file)
     self.icon_attribution = file.read[/^ {4}(.+?)$/m, 1]
