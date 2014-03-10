@@ -42,3 +42,25 @@ a.send-email-button {
     background: lighten(#63696E, 10%);
   }
 }
+
+.index-link {
+  display: block;
+  background: #ddd;
+  margin: 5px 0;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.theme-title-index {
+  display: inline-block;
+  margin: 20px 10px 0 0;
+}
+
+.has_many_fields {
+  margin-top: 50px;
+  border: 1px solid #666;
+}
+
+h3.edit-link {
+  margin-top: 5px;
+}

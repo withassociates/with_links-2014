@@ -1,5 +1,5 @@
 ActiveAdmin.register Theme do
-  config.sort_order = "issue_date DESC"
+  config.sort_order = 'issue_number DESC'
 
   controller do
     def find_resource
@@ -23,14 +23,16 @@ ActiveAdmin.register Theme do
     links_attributes: [:id, :sort_order, :title, :issue_number, :url, :description, :icon, :icon_attribution_file, 
                        :is_away, :person, :person_id, :_destroy]
 
-  index do
-    column :title
-    column :issue_date
-    column :issue_number
-    column :published
-    column :ready_to_send
-    column :sent_at
-    default_actions
+  index as: :block do |theme|
+    div for: theme do
+      h2 "#{theme.title} - Issue #{theme.issue_number}", class: 'theme-title-index'
+      h3 link_to("Edit this Theme", edit_admin_theme_path(theme)), class: 'edit-link'
+      div class: 'sort_these' do
+        theme.links.sorted.each do |link|
+          h3 "#{link.person.name} - #{link.title}", class: "index-link", id: link.id
+        end
+      end
+    end
   end
 
   form :html => { enctype: "multipart/form-data" } do |f|
@@ -43,7 +45,6 @@ ActiveAdmin.register Theme do
     end
     f.inputs "Links" do
       f.has_many :links, for: [:links, f.object.links.sorted], allow_destroy: true do |cf|
-        cf.input :sort_order, label: "Place in order", as: :select, collection: (1..Person.count)
         cf.input :person
         cf.input :icon, as: :file, hint: cf.object.icon.present? \
         ? cf.template.image_tag(cf.object.icon.url(:thumb))
@@ -51,11 +52,21 @@ ActiveAdmin.register Theme do
         cf.input :is_away, label: "Person is away?"
         cf.input :title
         cf.input :url, label: "URL"
-        cf.input :description, label: "Link description"
+        cf.input :description, label: "Link description", input_html: { rows: 2 }
         cf.input :icon_attribution_file, as: :file
       end
     end
     f.actions
+  end
+
+  collection_action :sort, method: :post do
+    link_ids = params.require(:link_ids)
+
+    link_ids.each_with_index do |link_id, index|
+      Link.where(id: link_id).update_all(sort_order: index)
+    end
+
+    render nothing: true
   end
 end
 
