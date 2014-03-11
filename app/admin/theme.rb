@@ -1,5 +1,6 @@
 ActiveAdmin.register Theme do
   config.sort_order = 'issue_number DESC'
+  config.per_page = 5
 
   controller do
     def find_resource
@@ -31,7 +32,7 @@ ActiveAdmin.register Theme do
       if theme.ready_to_send?
         stamp_present = true
         stamp = "READY TO SEND"
-      elsif theme.sent_at.present?
+      elsif theme.ready_to_send? && theme.sent_at.present?
         stamp_present = true
         stamp = "SENT"
       end
@@ -39,7 +40,6 @@ ActiveAdmin.register Theme do
       if stamp_present
         h3 stamp, class: 'ready-to-send'
       end
-
 
       div class: 'sort_these' do
         theme.links.sorted.each do |link|
