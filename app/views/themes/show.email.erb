@@ -57,6 +57,10 @@ table a {
   text-align: right;
   width: 130px;
 }
+.pocket-btn {
+  float: left;
+  margin-right: 5px;
+}
 .open-in-browser a {
   font-size: 12px;
   text-decoration: none;
@@ -306,7 +310,18 @@ table a {
                         </td></tr>
                         <tr>
                           <td class="link-text">
-                            <p><%= link.description.html_safe if link.description.present? %></p>
+                          <p><%= link.description.html_safe if link.description.present? %></p>
+                          <% unless link.is_away? %>
+                            <div class="read-later-buttons">
+                              <a data-pocket-label="pocket" data-pocket-count="none" class="pocket-btn" data-lang="en"
+                                data-save-url="<%= link.url %>"></a>
+                              <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+                              <iframe border="0" scrolling="no" width="78" height="17" allowtransparency="true" frameborder="0"
+                                style="margin-top: 2px;margin-bottom: -3px; z-index: 1338; border: 0px; background-color: transparent; overflow: hidden;"
+                                src="http://www.instapaper.com/e2?url=<%= link.url %>&title=<%= URI.encode(link.title) %>"
+                                ></iframe>
+                            </div>
+                          <% end %>
                           </td>
                         </tr>
                       </table>
