@@ -64,3 +64,15 @@ a.send-email-button {
 h3.edit-link {
   margin-top: 5px;
 }
+
+.ready-to-send {
+  float: right;
+  display: block;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #666;
+  border-radius: 3px;
+  box-shadow: 2px 2px 3px #666;
+  transform: rotate(26deg);
+  -webkit-transform: rotate(26deg);
+}

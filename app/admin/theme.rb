@@ -27,6 +27,20 @@ ActiveAdmin.register Theme do
     div for: theme do
       h2 "#{theme.title} - Issue #{theme.issue_number}", class: 'theme-title-index'
       h3 link_to("Edit this Theme", edit_admin_theme_path(theme)), class: 'edit-link'
+
+      if theme.ready_to_send?
+        stamp_present = true
+        stamp = "READY TO SEND"
+      elsif theme.sent_at.present?
+        stamp_present = true
+        stamp = "SENT"
+      end
+
+      if stamp_present
+        h3 stamp, class: 'ready-to-send'
+      end
+
+
       div class: 'sort_these' do
         theme.links.sorted.each do |link|
           h3 "#{link.person.name} - #{link.title}", class: "index-link", id: link.id
