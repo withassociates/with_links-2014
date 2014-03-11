@@ -29,7 +29,7 @@ ActiveAdmin.register Theme do
       h2 "#{theme.title} - Issue #{theme.issue_number}", class: 'theme-title-index'
       h3 link_to("Edit this Theme", edit_admin_theme_path(theme)), class: 'edit-link'
 
-      if theme.ready_to_send?
+      if theme.ready_to_send? && theme.sent_at.nil?
         stamp_present = true
         stamp = "READY TO SEND"
       elsif theme.ready_to_send? && theme.sent_at.present?
