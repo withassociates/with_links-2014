@@ -33,4 +33,11 @@ describe "themes/show.html.erb" do
     expect(page).to have_content('First Link')
     expect(page).to have_content('A link on a Theme page')
   end
+
+  it "displays read later links" do
+    visit '/themes/with-links-theme'
+    first('.theme-link').click_link('Read later')
+
+    expect(page).to have_selector('.pocket-btn')
+  end
 end

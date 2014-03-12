@@ -1,16 +1,31 @@
 <%= content_tag_for :li, link, class: 'theme-link' do %>
   <div class="left">
-    <%= icon_link_unless_away(link, 100) %>
-    <% unless link.is_away? %>
-      <div class="read-laters">
-        <iframe border="0" scrolling="no" width="78" height="17" allowtransparency="true" frameborder="0"
-          style="margin-bottom: -3px; z-index: 1338; border: 0px; background-color: transparent; overflow: hidden;"
-          src="http://www.instapaper.com/e2?url=<%= link.url %>&title=<%= URI.encode(link.title) %>"
-          ></iframe>
-        <a data-pocket-label="pocket" data-pocket-count="none" class="pocket-btn" data-lang="en"
-          data-save-url="<%= link.url %>"></a>
-        <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+    <div class="flip-container">
+      <div class="flipper">
+        <div class="front-flip">
+          <%= icon_link_unless_away(link, 100) %>
+        </div>
+        <div class="back-flip">
+          <% unless link.is_away? %>
+            <div class="read-laters">
+              <iframe border="0" scrolling="no" width="78" height="17" allowtransparency="true" frameborder="0"
+                style="margin-bottom: -3px; z-index: 1338; border: 0px; background-color: transparent; overflow: hidden;"
+                src="http://www.instapaper.com/e2?url=<%= link.url %>&title=<%= URI.encode(link.title) %>"
+                ></iframe>
+              <a data-pocket-label="pocket" data-pocket-count="none" class="pocket-btn" data-lang="en"
+                data-save-url="<%= link.url %>"></a>
+              <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+              <a href="http://www.pinterest.com/pin/create/button/?url=<%= link.url %>&description=<%= URI.encode(link.title) %>"
+                data-pin-do="buttonPin" data-pin-config="above">
+                <img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" />
+              </a>
+            </div>
+          <% end %>
+        </div>
       </div>
+    </div>
+    <% unless link.is_away? %>
+      <a href="#" class="read-later-button">Read later</a>
     <% end %>
   </div>
 
