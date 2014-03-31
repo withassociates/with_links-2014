@@ -7,7 +7,7 @@ ActiveAdmin.register Person do
 
   menu :label => "People"
 
-  permit_params :name
+  permit_params :name, :is_guest
 
   index do
     column :name
@@ -17,6 +17,7 @@ ActiveAdmin.register Person do
   form :html => { enctype: "multipart/form-data" } do |f|
     f.inputs "person" do
       f.input :name
+      f.input :is_guest, label: "Is this person a guest?"
     end
     f.actions
   end

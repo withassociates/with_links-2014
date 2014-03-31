@@ -1,6 +1,7 @@
 class PeopleController < ApplicationController
   def index
-    @people = Person.all
+    @with = Person.with_employee.alphabetical
+    @guests = Person.guest.alphabetical
   end
 
   def show

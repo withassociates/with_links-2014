@@ -4,11 +4,25 @@
   </header>
 
   <ul class="people-list">
-    <% @people.each do |person| %>
+    <% @with.each do |person| %>
       <li class="people-list-item">
         <%= link_to person.name, person_path(person), class: 'person-link' %>
       </li>
     <% end %>
   </ul>
+
+  <% if @guests.present? %>
+    <header class="people-header">
+      <h1 class="people-title">Guests</h1>
+    </header>
+
+    <ul class="people-list">
+      <% @guests.each do |person| %>
+        <li class="people-list-item">
+          <%= link_to person.name, person_path(person), class: 'person-link' %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
 </section>
 
