@@ -288,7 +288,7 @@ table a {
       </th>
     </tr>
     <tr><td><table id="links" cellspacing="0" cellpadding="0">
-          <% @theme.links.each do |link| %>
+          <% @theme.links.sorted.each do |link| %>
             <tr>
               <td class="link-wrapper">
                 <table class="link-container" cellspacing="0" cellpadding="0">
@@ -342,7 +342,7 @@ table a {
       </td>
       <td class="credits">
         <p>
-          <% @theme.links.each do |link| %>
+          <% @theme.links.sorted.each do |link| %>
             <% if link.icon_attribution.present? %>
               <%= icon_credit(link).html_safe %><br>
             <% end %>
