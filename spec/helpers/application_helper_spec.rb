@@ -38,7 +38,7 @@ describe ApplicationHelper do
     end
 
     it "returns the link if the person is not away" do
-      expect(helper.link_unless_person_is_away(link_not_away)).to eq('<a href="http://www.google.com">Google</a>')
+      expect(helper.link_unless_person_is_away(link_not_away)).to eq('<a href="http://www.google.com" target="_blank">Google</a>')
     end
   end
 
