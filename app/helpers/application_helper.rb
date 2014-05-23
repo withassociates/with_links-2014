@@ -3,7 +3,7 @@ module ApplicationHelper
     if link.is_away?
       "#{link.person.name} is away"
     else
-      link_to link.title, link.url
+      link_to link.title, link.url, target: "_blank"
     end
   end
 
