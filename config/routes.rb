@@ -1,4 +1,6 @@
 WithLinksV2::Application.routes.draw do
+  get 'themes/Lunar Cycles', to: redirect('http://lunarcycles.co.uk/')
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
