@@ -9,7 +9,7 @@ ActiveAdmin.register_page "Dashboard" do
             Theme.first.title
           end
           table_for Theme.first.links.order("votes DESC") do
-            column("Person") { |link| link.person.name }
+            column("Person") { |link| link.person.try(:name) }
             column("Link") { |link| link_to(link.title, link.url) }
             column("Description") { |link| truncate(link.description, length: 100) }
             column("Has icon?") { |link| link.icon.present? ? "yes" : "no" }
