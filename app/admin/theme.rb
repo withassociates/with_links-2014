@@ -43,7 +43,7 @@ ActiveAdmin.register Theme do
 
       div class: 'sort_these' do
         theme.links.sorted.each do |link|
-          h3 "#{link.person.name} - #{link.title}", class: "index-link", id: link.id
+          h3 "#{link.person.try(:name)} - #{link.title}", class: "index-link", id: link.id
         end
       end
     end

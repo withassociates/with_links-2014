@@ -1,7 +1,7 @@
 module ApplicationHelper
   def link_unless_person_is_away(link)
     if link.is_away?
-      "#{link.person.name} is away"
+      "#{link.person.try(:name)} is away"
     else
       link_to link.title, link.url, target: "_blank"
     end
@@ -27,7 +27,7 @@ module ApplicationHelper
     if controller_name == 'people'
       link_to link.theme.title, theme_path(link.theme)
     elsif link.person
-      link_to link.person.name, person_path(link.person)
+      link_to link.person.try(:name), person_path(link.person)
     end
   end
 
