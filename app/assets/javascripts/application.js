@@ -13,3 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function() {
+  $('.read-later-button').on('click', function(e) {
+    e.preventDefault();
+    $(this).prev('.flip-container').toggleClass('flipped');
+  });
+});
