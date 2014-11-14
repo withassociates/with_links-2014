@@ -1,5 +1,6 @@
 WithLinksV2::Application.routes.draw do
   get 'themes/Lunar Cycles', to: redirect('http://lunarcycles.co.uk/')
+  get 'themes/“http://en.wikipedia.org/*other', to: redirect('http://en.wikipedia.org/wiki/Relative_age_effect')
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
