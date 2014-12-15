@@ -101,8 +101,6 @@ GEM
     diff-lcs (1.2.5)
     docile (1.1.5)
     dotenv (1.0.2)
-    dotenv-rails (1.0.2)
-      dotenv (= 1.0.2)
     erubis (2.7.0)
     execjs (2.2.2)
     foreman (0.76.0)
@@ -268,7 +266,6 @@ DEPENDENCIES
   createsend (~> 4.0.2)
   database_cleaner
   devise (~> 3.4.1)
-  dotenv-rails
   foreman
   friendly_id (~> 5.0.4)
   jquery-rails

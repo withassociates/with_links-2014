@@ -20,7 +20,7 @@ class SendThemeAsEmail
 
     campaign = CreateSend::Campaign.new(auth, campaign_id)
 
-    campaign.send(ENV['CREATESEND_CONFIRMATION_EMAIL'])
+    campaign.send(Rails.application.secrets.createsend_confirmation_email)
   rescue
     theme.mark_as_unsent!
   end
@@ -28,11 +28,11 @@ class SendThemeAsEmail
   private
 
   def auth
-    { api_key: ENV['CREATESEND_API_KEY'] }
+    { api_key: Rails.application.secrets.createsend_api_key }
   end
 
   def client_id
-    ENV['CREATESEND_CLIENT_ID']
+    Rails.application.secrets.createsend_client_id
   end
 
   def subject
@@ -64,11 +64,11 @@ class SendThemeAsEmail
   end
 
   def list_ids
-    [ENV['CREATESEND_LIST_ID']]
+    [Rails.application.secrets.createsend_list_id]
   end
 
   def segment_ids
-    ids = [ENV['CREATESEND_SEGMENT_ID']].reject(&:blank?)
+    ids = [Rails.application.secrets.createsend_segment_id].reject(&:blank?)
 
     if ids.any?
       ids
