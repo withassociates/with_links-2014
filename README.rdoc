@@ -1,14 +1,12 @@
 == With Links 2014
-{<img src="https://gemnasium.com/withassociates/with_links-2014.svg" alt="Dependency Status" />}[https://gemnasium.com/withassociates/with_links-2014]
-
-{<img src="https://codeclimate.com/repos/5303646769568029d40056a1/badges/87df846860c8c28b8fbb/gpa.png" />}[https://codeclimate.com/repos/5303646769568029d40056a1/feed]
+{<img src="https://gemnasium.com/withassociates/with_links-2014.svg" alt="Dependency Status" />}[https://gemnasium.com/withassociates/with_links-2014] {<img src="https://codeclimate.com/repos/5303646769568029d40056a1/badges/87df846860c8c28b8fbb/gpa.png" />}[https://codeclimate.com/repos/5303646769568029d40056a1/feed]
 
 *Setup:*
 
 Clone the repo, run <tt>bundle install</tt> and <tt>rake db:migrate</tt>.
 To install dummy data for your development environment, run <tt>rake db:seed</tt>.
 
-Visit '/admin' (ask a human for the passwordz or check in Instiki).
+Visit '/admin' (ask a human for the password).
 
 *Deploying:*
 
