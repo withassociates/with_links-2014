@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-WithLinksV2::Application.config.secret_key_base = Settings.secret_key
+WithLinksV2::Application.config.secret_key_base = Rails.application.secrets.secret_key

@@ -10,7 +10,7 @@ ActiveAdmin.register Link do
     column :title
     column :url
     column :icon_attribution
-    default_actions
+    actions
   end
 
   form :html => { enctype: "multipart/form-data" } do |f|

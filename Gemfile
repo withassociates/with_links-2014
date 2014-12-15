@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.2'
+gem 'rails', '4.1.8'
 
 group :development do
   gem 'sqlite3'
@@ -20,18 +20,17 @@ group :development, :test do
   gem 'pry-rails'
 end
 
-gem 'sass-rails', '~> 4.0.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'activeadmin'  , github: 'activeadmin'
+gem 'aws-sdk'      , '~> 1.59.1'
+gem 'coffee-rails' , '~> 4.1.0'
+gem 'createsend'   , '~> 4.0.2'
+gem 'devise'       , '~> 3.4.1'
+gem 'friendly_id'  , '~> 5.0.4'
 gem 'jquery-rails'
-gem 'jbuilder', '~> 1.2'
-gem 'paperclip', '~> 4.0.0'
-gem 'activeadmin', github: 'gregbell/active_admin'
-gem 'aws-sdk'
-gem 'friendly_id', '~> 5.0.0'
-gem 'createsend'
-gem 'settingslogic'
-gem 'unicorn'
+gem 'paperclip'    , '~> 4.2.1'
+gem 'sass-rails'   , '~> 5.0.0'
+gem 'uglifier'     , '>= 1.3.0'
+gem 'unicorn'      , '~> 4.8.3'
 
 group :test do
   gem 'rspec-rails'

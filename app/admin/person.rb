@@ -11,7 +11,7 @@ ActiveAdmin.register Person do
 
   index do
     column :name
-    default_actions
+    actions
   end
 
   form :html => { enctype: "multipart/form-data" } do |f|

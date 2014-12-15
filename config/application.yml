@@ -1,10 +1,7 @@
 defaults: &defaults
 
 production:
-  secret_key: <%= ENV['secret_key'] %>
 
 development:
-  secret_key: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
 
 test:
-  secret_key: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
