@@ -1,5 +1,5 @@
 == With Links 2014
-{<img src="https://gemnasium.com/withassociates/with_links-2014.svg" alt="Dependency Status" />}[https://gemnasium.com/withassociates/with_links-2014] {<img src="https://codeclimate.com/repos/5303646769568029d40056a1/badges/87df846860c8c28b8fbb/gpa.png" />}[https://codeclimate.com/repos/5303646769568029d40056a1/feed]
+{<img src="https://gemnasium.com/withassociates/with_links-2014.svg" alt="Dependency Status" />}[https://gemnasium.com/withassociates/with_links-2014] {<img src="https://codeclimate.com/github/withassociates/with_links-2014/badges/gpa.svg" />}[https://codeclimate.com/github/withassociates/with_links-2014]
 
 *Setup:*
 
