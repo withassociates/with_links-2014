@@ -20,6 +20,7 @@ ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 RSpec.configure do |config|
   config.order = 'random'
   config.include Capybara::DSL
+  config.infer_spec_type_from_file_location!
 
   config.before :suite do
     DatabaseCleaner.strategy = :transaction
