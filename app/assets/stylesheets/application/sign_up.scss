@@ -58,7 +58,8 @@
 
 .sign-up-button {
   display: block;
-  @include position(absolute, -2px 0px 0px 0);
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
 
   border-radius: 2px;
   font-weight: bold;
