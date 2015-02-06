@@ -22,7 +22,7 @@ ActiveAdmin.register Theme do
   menu :label => "Themes"
   permit_params :issue_date, :title, :issue_number, :published, :ready_to_send,
     links_attributes: [:id, :sort_order, :title, :issue_number, :url, :description, :icon, :icon_attribution_file, 
-                       :is_away, :person, :person_id, :_destroy]
+                       :is_away, :person, :person_id, :_destroy, :link_category_id, :link_category]
 
   index as: :block do |theme|
     div for: theme do
