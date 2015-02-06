@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140408141715) do
+ActiveRecord::Schema.define(version: 20150206155121) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -59,6 +59,15 @@ ActiveRecord::Schema.define(version: 20140408141715) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
+  create_table "link_categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
+  end
+
+  add_index "link_categories", ["slug"], name: "index_link_categories_on_slug", unique: true
+
   create_table "links", force: true do |t|
     t.string   "title"
     t.string   "url"
@@ -80,6 +89,7 @@ ActiveRecord::Schema.define(version: 20140408141715) do
     t.string   "icon_attribution"
     t.integer  "sort_order"
     t.integer  "issue_number"
+    t.integer  "link_category_id"
   end
 
   add_index "links", ["sort_order"], name: "index_links_on_sort_order"

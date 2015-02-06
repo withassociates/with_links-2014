@@ -7,6 +7,7 @@ class Link < ActiveRecord::Base
 
   belongs_to :person
   belongs_to :theme
+  belongs_to :link_category
 
   scope :sorted, -> { order("sort_order ASC") }
   scope :by_issue, -> { order("issue_number DESC") }

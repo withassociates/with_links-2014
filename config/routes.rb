@@ -7,6 +7,7 @@ WithLinksV2::Application.routes.draw do
   get '/latest-issue', to: 'themes#email', as: 'latest_issue'
 
   resources :themes, :links, :people, only: [:show, :index]
+  resources :link_categories, as: :categories, path: 'categories'
 
   root 'themes#home'
 end

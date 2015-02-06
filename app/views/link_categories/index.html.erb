@@ -1,0 +1,14 @@
+<section class="people" role="main">
+  <header class="people-header">
+    <h1 class="people-title">With</h1>
+  </header>
+
+  <ul class="people-list">
+    <% @link_categories.each do |type| %>
+      <li class="people-list-item">
+        <%= link_to type.name, category_path(type), class: 'person-link' %>
+      </li>
+    <% end %>
+  </ul>
+</section>
+

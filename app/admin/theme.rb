@@ -64,6 +64,7 @@ ActiveAdmin.register Theme do
         ? cf.template.image_tag(cf.object.icon.url(:thumb))
         : cf.template.content_tag(:span, "No image yet!")
         cf.input :is_away, label: "Person is away?"
+        cf.input :link_category
         cf.input :title
         cf.input :url, label: "URL"
         cf.input :description, label: "Link description", input_html: { rows: 2 }

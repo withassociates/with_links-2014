@@ -1,0 +1,13 @@
+<article class="theme" role="main">
+  <header class="theme-header">
+    <h1 class="theme-title"><%= @category.name %></h1>
+  </header>
+
+  <ul class="theme-links">
+    <%= render @links.sorted %>
+  </ul>
+
+  <div class="view-all-issues">
+    <%= link_to "View all Categories", categories_path %>
+  </div>
+</article>
