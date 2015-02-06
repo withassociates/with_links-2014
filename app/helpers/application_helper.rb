@@ -27,7 +27,11 @@ module ApplicationHelper
     if controller_name == 'people'
       link_to link.theme.title, theme_path(link.theme)
     elsif link.person
-      link_to link.person.try(:name), person_path(link.person)
+      if link.link_category.present?
+        "#{link_to link.person.try(:name), person_path(link.person)} | #{link.link_category.name}".html_safe
+      else
+        link_to link.person.try(:name), person_path(link.person)
+      end
     end
   end
 
