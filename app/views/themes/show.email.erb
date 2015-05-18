@@ -244,6 +244,8 @@ table a {
     margin-bottom: 0;
   }
 }
+strong { font-weight: bold; }
+.free-text { text-align: center; padding-bottom: 20px; }
 </style>
 </head>
 <body>
@@ -256,6 +258,11 @@ table a {
       </td>
       <td class="open-in-browser">
         <webversion>Open in browser</webversion>
+      </td>
+    </tr>
+    <tr>
+      <td class="free-text" colspan="6">
+        <%= @theme.free_text.html_safe if @theme.free_text.present? %>
       </td>
     </tr>
     <tr>

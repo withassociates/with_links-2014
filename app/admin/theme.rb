@@ -20,8 +20,8 @@ ActiveAdmin.register Theme do
   end
 
   menu :label => "Themes"
-  permit_params :issue_date, :title, :issue_number, :published, :ready_to_send,
-    links_attributes: [:id, :sort_order, :title, :issue_number, :url, :description, :icon, :icon_attribution_file, 
+  permit_params :issue_date, :title, :issue_number, :published, :ready_to_send, :free_text,
+    links_attributes: [:id, :sort_order, :title, :issue_number, :url, :description, :icon, :icon_attribution_file,
                        :is_away, :person, :person_id, :_destroy, :link_category_id, :link_category]
 
   index as: :block do |theme|
@@ -54,6 +54,7 @@ ActiveAdmin.register Theme do
       f.input :title, label: "Theme title"
       f.input :issue_date, label: "Issue date"
       f.input :issue_number, label: "Issue number"
+      f.input :free_text, label: "Additional text (use HTML!)", input_html: { rows: 4 }
       f.input :published, label: "Published to site?"
       f.input :ready_to_send, label: "Ready to send?", as: :boolean
     end

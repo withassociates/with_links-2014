@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150206155121) do
+ActiveRecord::Schema.define(version: 20150518103830) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -114,6 +114,7 @@ ActiveRecord::Schema.define(version: 20150206155121) do
     t.string   "slug"
     t.boolean  "ready_to_send"
     t.datetime "sent_at"
+    t.text     "free_text"
   end
 
   add_index "themes", ["issue_number"], name: "index_themes_on_issue_number"
