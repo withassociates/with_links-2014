@@ -21,3 +21,6 @@
 
 # Ignore environment variables
 .env
+
+# Ignore otto artefacts
+.otto
