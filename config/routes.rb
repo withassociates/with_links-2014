@@ -10,5 +10,9 @@ WithLinksV2::Application.routes.draw do
   resources :themes, :links, :people, only: [:show, :index]
   resources :link_categories, as: :categories, path: 'categories'
 
+  resources :submissions, only: [:new, :create]
+  get '/submissions/thanks' => 'submissions#thanks', as: :submission_thanks
+  get '/submit', to: redirect('/submissions/new')
+
   root 'themes#home'
 end

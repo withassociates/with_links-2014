@@ -12,6 +12,10 @@ class Theme < ActiveRecord::Base
   scope :published, -> { where(published: true).order('issue_number DESC') }
   scope :ready_for_email, -> { where(ready_to_send: true).first }
 
+  def self.current
+    first
+  end
+
   def previous
     self.class.published.where('issue_number < ?', self.issue_number).first
   end

@@ -1,0 +1,18 @@
+<header>
+  <h1>This week’s theme:<br><%= @theme.title %></h1>
+</header>
+<main>
+  <%= form_for @link, url: submissions_path do |f| %>
+    <dl>
+      <dt><%= f.label :person_id, "Who are you?" %></dt>
+      <dd><%= f.select :person_id, Person.all.map { |p| [p.name, p.id ] }, include_blank: true %></dd>
+      <dt><%= f.label :url, "URL" %></dt>
+      <dd><%= f.text_field :url, placeholder: "http://example.com" %></dt>
+      <dt><%= f.label :title, "Title" %></dt>
+      <dd><%= f.text_field :title, placeholder: "Very interesting link…" %></dd>
+      <dt><%= f.label :description, "Description" %></dt>
+      <dd><%= f.text_area :description, placeholder: "Some more fun info…" %></dd>
+    </dl>
+    <button type="submit">Submit</button>
+  <% end %>
+</main>
