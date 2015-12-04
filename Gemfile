@@ -8,6 +8,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'bourbon'
   gem 'foreman'
+  gem 'spring-commands-rspec'
 end
 
 group :production do
