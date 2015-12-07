@@ -4,6 +4,7 @@ class SubmissionsController < ApplicationController
   def new
     @theme = Theme.current
     @link = @theme.links.new
+    @people = Person.order(:name)
   end
 
   def create
