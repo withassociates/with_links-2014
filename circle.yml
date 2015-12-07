@@ -1,6 +1,3 @@
-machine:
-  environment:
-    CODECLIMATE_REPO_TOKEN: 657dfa05805d9f29276d8d4aeef5a441431f1bd30e0e16454fab0ebc53d38e98
 notify:
   webhooks:
     - url: https://circleslack.herokuapp.com/build/

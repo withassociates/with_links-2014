@@ -18,6 +18,7 @@ end
 
 group :development, :test do
   gem 'pry-rails'
+  gem 'rspec_junit_formatter', '0.2.2'
 end
 
 gem 'activeadmin'  , github: 'activeadmin'
