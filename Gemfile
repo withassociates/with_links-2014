@@ -1,6 +1,6 @@
-ruby "2.2.4"
 source 'https://rubygems.org'
 
+ruby File.read('.ruby-version').strip
 gem 'rails', '4.1.8'
 
 group :development do
